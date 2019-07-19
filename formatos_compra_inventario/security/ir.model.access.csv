@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_formatos_compra_inventario_formatos_compra_inventario,formatos_compra_inventario.formatos_compra_inventario,model_formatos_compra_inventario_formatos_compra_inventario,,1,0,0,0

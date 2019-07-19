@@ -1,0 +1,85 @@
+<odoo>
+	<template id="template_formato_entrega_cliente">
+		<t t-call="web.html_container">
+			<t t-call="web.external_layout">
+				<t>
+					<div class="page">
+						<div t-foreach="docs" t-as="o"> 
+							<br/>
+							<h3 class="text-center">Entrega Monopark</h3>
+							<table>
+								<tr >
+									<div t-if="o.origin">
+										<strong>Pedido: </strong>
+										<span t-field="o.origin"/>
+									</div>
+									<div t-if="o.entrega">
+										<strong>Entrega: </strong>
+										<span t-field="o.entrega"/>
+									</div>
+									<div t-if="o.partner_id">
+										<strong>Cliente: </strong>
+										<span t-field="o.partner_id"/>
+									</div>
+								</tr>
+							</table>
+							<br/>
+							<table class="table">
+								<thead>
+									<tr>
+										<th colspan="5">Equipo Entregado</th>
+									</tr>
+									<tr>
+										<th scope="col">No</th>
+										<th scope="col">Cantidad</th>
+										<th scope="col">Grupo</th>
+										<th scope="col">Código</th>
+										<th scope="col">Descripción del producto</th>
+									</tr>
+								</thead>
+								<tbody>
+									<t t-set="cont" t-value="0" />
+									<t t-foreach="o.move_ids_without_package" t-as="line">
+										<t t-set="cont" t-value="cont + 1" />
+										<tr>
+											<th scope="row"><span><t t-esc="cont"/></span></th>
+											<td><span t-field="line.product_uom_qty"/></td>
+											<td></td>
+											<td></td>
+											<td><span t-field="line.product_id"/></td>
+										</tr>
+									</t>
+								</tbody>
+							</table>
+							<br/>
+							<strong>Comentarios:</strong>
+							<p>____________________________________________________________________________________________________________________________________________________________________________________________</p>
+
+							<p style="text-align : justify;">
+								A través de la presente hacemos de su conocimiento que estamos conformes en su totalidad con el suministro de los pedidos "N"  que los colaboradores de la empresa MONOPARK realizaron en nuestras instalaciones o en el domicilio acordado.
+							</p>
+							<p style="text-align : justify;">
+								Así mismo, sustento que todas las cláusulas del contrato del servicio que compartimos, fueron respetadas y llevadas a cabalidad, por lo que reiteramos nuestra conformidad con los servicios que nos han prestado.
+							</p>
+							<table class=" table table-borderless">
+								<tr>
+									<th class="text-right">Nombre:</th>
+									<td>________________________________________________</td>
+								</tr>
+								<tr>
+									<th class="text-right">Firma de conformidad:</th>
+									<td>________________________________________________</td>
+								</tr>
+								<tr>
+									<th class="text-right">Fecha:</th>
+									<td>________________________________________________</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+				</t>
+			</t>
+		</t>
+	</template>
+
+</odoo>
