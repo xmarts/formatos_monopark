@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <template id="pdf_purchase" inherit_id="purchase.report_purchaseorder_document">
-        <xpath expr="//[@name='page']" position="replace">
+        <xpath expr="//t[@t-call='web.external_layout']/div[hasclass('page')][1]" position="replace">
             <div class="page">
                     <div class="oe_structure"/>
 
