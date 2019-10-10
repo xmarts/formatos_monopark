@@ -26,8 +26,6 @@
         <xpath expr="//field[@name='currency_id']" position="after">
           <field name="tipo_de"/>
           <field name="empleado"/>
-        </xpath>
-        <xpath expr="//field[@name='compra_tipo']" position="after">
           <field name="num_pedido"/>
         </xpath>
       </field>
