@@ -212,9 +212,20 @@
                             </tr>
                         </tbody>
                     </table>-->
-
-                    <div id="total" class="row justify-content-end">
-                        <div class="col-4">
+                    <div id="informations" class="row mt32 mb32">
+                        <div class="col-6 bm-2">
+                            <table style="border: 1px solid;">
+                                <tr>
+                                    <th style="background-color:#EAEAEA;height:22px;">No. De factura</th>
+                                    <td>Aqui</td>
+                                </tr>
+                                <tr>
+                                    <th style="background-color:#EAEAEA;height:22px;">Fecha limite de pago</th>
+                                    <td>Aqui</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="col-6 bm-2 justify-content-end">
                             <table class="table table-sm">
                                 <tr class="border-black">
                                     <td><strong>Subtotal</strong></td>
@@ -237,6 +248,30 @@
                             </table>
                         </div>
                     </div>
+                    <!--<div id="total" class="row justify-content-end">
+                        <div class="col-4">
+                            <table class="table table-sm">
+                                <tr class="border-black">
+                                    <td><strong>Subtotal</strong></td>
+                                    <td class="text-right">
+                                        <span t-field="o.amount_untaxed" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: o.currency_id}"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Impuestos</td>
+                                    <td class="text-right">
+                                        <span t-field="o.amount_tax" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: o.currency_id}"/>
+                                    </td>
+                                </tr>
+                                <tr class="border-black o_total">
+                                    <td><strong>Total</strong></td>
+                                    <td class="text-right">
+                                        <span t-field="o.amount_total" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: o.currency_id}"/>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>-->
 
                     <p t-field="o.notes"/>
                     <div class="oe_structure"/>
