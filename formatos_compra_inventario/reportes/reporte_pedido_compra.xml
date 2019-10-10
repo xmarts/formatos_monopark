@@ -24,34 +24,49 @@
                             <p t-field="o.date_order" class="m-0"/>
                         </div>
                     </div>-->
+                    <h3 class="text-center">Datos del proveedor</h3>
                     <div id="informations" class="row mt32 mb32">
-                        <h3 class="text-center">Datos del proveedor</h3>
-                        <br/>
                         <div class="col-6 bm-2">
                             <strong>N. Comercial:</strong>
-                            <p t-field="o.partner_id.x_studio_nombre_comercial" class="m-0"/>
+                            <span t-field="o.partner_id.x_studio_nombre_comercial" class="m-0"/>
                             <br/>
                             <strong>Razón social:</strong>
-                            <p t-field="o.partner_id.name"/>
+                            <span t-field="o.partner_id.name"/>
                             <br/>
                             <strong>Domicilio:</strong>
-                            <p t-field="o.partner_id.street"/>
+                            <span t-field="o.partner_id.street"/>
                             <br/>
                             <strong>Colonia:</strong>
                             <p t-field="o.partner_id.l10n_mx_edi_colony"/>
                             <br/>
                             <strong>C.P.:</strong>
-                            <p t-field="o.partner_id.zip"/>
+                            <span t-field="o.partner_id.zip"/>
                             <br/>
                             <strong>Ciudad:</strong>
-                            <p t-field="o.partner_id.city_id.name"/>
+                            <span t-field="o.partner_id.city_id.name"/>
                             <br/>
                             <strong>Estado:</strong>
-                            <p t-field="o.partner_id.state_id.name"/>
+                            <span t-field="o.partner_id.state_id.name"/>
                             <br/>
                             <strong>Tipo de:</strong>
-                            <p t-field="o.tipo_de"/>
+                            <span t-field="o.tipo_de"/>
                             <br/>
+                        </div>
+                        <div class="col-6 bm-2">
+                            <table style="margin-left:10px;" class="table table-striped">
+                                <tr>
+                                   <th>Banco</th>
+                                   <th>No. Cuenta</th>
+                                   <th>Clabe</th>
+                                </tr>
+                                <t t-foreach="o.partner_id.bank_ids" t-as="line">
+                                    <tr>
+                                        <td><span t-field="line.bank_id"/></td>
+                                        <td><span t-field="line.acc_number"/></td>
+                                        <td><span t-field="line.clabe_campo"/></td>
+                                    </tr>
+                                </t>
+                            </table>
                         </div>
                     </div>
 
