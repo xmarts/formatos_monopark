@@ -31,19 +31,19 @@
                             <img t-attf-src="data:image/*;base64,{{o.company_id.logo}}" style="max-height:200px;max-width:250px;"/>
                         </div>
                         <div class="col-4 bm-2">
-                            <table class="table" style="width:120px;font-size:9pt;border:1px solid;">
-                                <tr style="background-color:#EAEAEA;height:2%;">
+                            <table style="width:130px;font-size:9pt;border:1px solid;text-align:center;">
+                                <tr style="background-color:#EAEAEA;height:15px;">
                                     <td>FOLIO</td>
                                 </tr>
-                                <tr style="height:2%;">
+                                <tr style="height:15px;">
                                     <td>5555</td>
                                 </tr>
                             </table>
-                            <table class="table" style="width:120px;font-size:9pt;border:1px solid;">
-                                <tr style="background-color:#EAEAEA;eight:2%;">
+                            <table style="width:130px;font-size:9pt;border:1px solid;text-align:center;">
+                                <tr style="background-color:#EAEAEA;height:15px;">
                                     <td>FECHA</td>
                                 </tr>
-                                <tr style="height:2%;">
+                                <tr style="height:15px;;">
                                     <td>10-oct-2019</td>
                                 </tr>
                             </table>
@@ -61,7 +61,7 @@
                     </div>
 
                     <h4 class="text-center" style="background-color:#EAEAEA;padding:5px;">Datos del proveedor</h4>
-                    <div id="informations" class="row mt32 mb32" style="border:1px solid;">
+                    <div id="informations" class="row mt32 mb32" style="border:1px solid;padding:10px;">
                         <div class="col-6 bm-2">
                             <strong>N. Comercial:</strong>
                             <span t-field="o.partner_id.x_studio_nombre_comercial" class="m-0"/>
@@ -118,7 +118,7 @@
                         </div>
                     </div>
 
-                    <div class="row mt32 mb32">
+                    <div class="row mt32 mb32" style="border:1px solid;padding:10px;">
                         <div class="col-6 bm-2">
                             <strong>Cedis:</strong>
                             <span t-field="o.picking_type_id.warehouse_id.name"/>
