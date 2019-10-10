@@ -1,9 +1,11 @@
-<?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <template id="reporte_pedido_compra" inherit_id="purchase.report_purchaseorder_document">
         <xpath expr="//t[@t-call='web.external_layout']" position="replace">
             <t t-call="web.basic_layout">
                 <div class="header">
+                <h1>Monopark</h1>
+                </div>
+                <div class="page">
                     <div class="oe_structure"/>
 
                     <h2 t-if="o.state == 'draft'">Solicitud de presupuesto  #<span t-field="o.name"/></h2>
