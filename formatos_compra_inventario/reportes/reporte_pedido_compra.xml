@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <template id="reporte_pedido_compra" inherit_id="purchase.report_purchaseorder_document">
-        <xpath expr="//t[@t-call='web.external_layout']/div[hasclass('page')]" position="replace">
-            <div class="page">
+        <xpath expr="//t[@t-call='web.external_layout']" position="replace">
+            <t t-call="web.basic_layout">
+                <div class="header">
                     <div class="oe_structure"/>
 
                     <h2 t-if="o.state == 'draft'">Solicitud de presupuesto  #<span t-field="o.name"/></h2>
@@ -10,20 +11,6 @@
                     <h2 t-if="o.state in ['purchase', 'done']">Confirmación de orden de compra #<span t-field="o.name"/></h2>
                     <h2 t-if="o.state == 'cancel'">Orden de compa cancelada #<span t-field="o.name"/></h2>
 
-                    <!--<div id="informations" class="row mt32 mb32">
-                        <div t-if="o.name" class="col-3 bm-2">
-                            <strong>Nuestra ref. pedido:</strong>
-                            <p t-field="o.name" class="m-0"/>
-                        </div>
-                        <div t-if="o.partner_ref" class="col-3 bm-2">
-                            <strong>Su orden de referencia:</strong>
-                            <p t-field="o.partner_ref" class="m-0"/>
-                        </div>
-                        <div t-if="o.date_order" class="col-3 bm-2">
-                            <strong>Fecha de orden:</strong>
-                            <p t-field="o.date_order" class="m-0"/>
-                        </div>
-                    </div>-->
                     <h4 class="text-center">Datos del proveedor</h4>
                     <div id="informations" class="row mt32 mb32">
                         <div class="col-6 bm-2">
@@ -82,7 +69,6 @@
                         </div>
                     </div>
 
-
                     <div id="informations" class="row mt32 mb32">
                         <div class="col-6 bm-2">
                             <strong>Cedis:</strong>
@@ -111,7 +97,6 @@
                             <span t-field="o.num_pedido"/>
                         </div>
                     </div>
-                    <br/>
 
                     <table class="table table-sm o_main_table">
                         <thead>
@@ -176,7 +161,9 @@
 
                     <p t-field="o.notes"/>
                     <div class="oe_structure"/>
-            </div>
+                    
+                </div>
+            </t>        
         </xpath>
-    </template>
-</odoo>    
+    </template>        
+</odoo>
