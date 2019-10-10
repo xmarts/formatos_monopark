@@ -214,13 +214,13 @@
                     </table>-->
                     <div id="informations" class="row mt32 mb32">
                         <div class="col-6 bm-2">
-                            <table style="border: 1px solid;">
+                            <table style="border: 1px solid;width:300px;">
                                 <tr>
-                                    <th style="background-color:#EAEAEA;height:22px;">No. De factura</th>
+                                    <th style="background-color:#EAEAEA;height:22px;padding:10px;">No. De factura</th>
                                     <td>Aqui</td>
                                 </tr>
                                 <tr>
-                                    <th style="background-color:#EAEAEA;height:22px;">Fecha limite de pago</th>
+                                    <th style="background-color:#EAEAEA;height:22px;padding:10px;">Fecha limite de pago</th>
                                     <td>Aqui</td>
                                 </tr>
                             </table>
