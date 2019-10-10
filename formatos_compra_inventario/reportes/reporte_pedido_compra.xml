@@ -50,7 +50,7 @@
                             <p t-field="o.partner_id.state_id.name"/>
                             <br/>
                             <strong>Tipo de:</strong>
-                            <p t-field="o.partner_id.tipo_de"/>
+                            <p t-field="o.tipo_de"/>
                             <br/>
                         </div>
                     </div>
