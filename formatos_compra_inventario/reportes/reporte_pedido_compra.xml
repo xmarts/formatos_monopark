@@ -37,7 +37,7 @@
                                     <td>FOLIO</td>
                                 </tr>
                                 <tr style="height:18px;">
-                                    <td>5555</td>
+                                    <td><span t-field="o.name"/></td>
                                 </tr>
                             </table>
                             <br/>
@@ -46,7 +46,7 @@
                                     <td>FECHA</td>
                                 </tr>
                                 <tr style="height:18px;;">
-                                    <td>10-oct-2019</td>
+                                    <td><span t-field="o.date_order"/></td>
                                 </tr>
                             </table>
                         </div>
@@ -253,7 +253,7 @@
                         <tr>
                             <td style="border-top: 0px solid white;text-align:center;"><img t-attf-src="data:image/*;base64,{{o.client}}" style="text-align:center;max-height:80px;max-width:120px;"/></td>
                             
-                            <td style="border-top: 0px solid white;text-align:center;"><img t-attf-src="data:image/*;base64,{{o.consul}}" style="text-align:center;max-height:80px;max-width:120px;"/></td>
+                            <td style="border-top: 0px solid white;text-align:center;"><img t-attf-src="data:image/*;base64,{{o.consul}}" style="text-align:center;max-height:100px;max-width:150px;"/></td>
                         </tr>
                         <tr>
                             <td style="border-top: 0px solid white; text-align:center; ">Cliente</td>
