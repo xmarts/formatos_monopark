@@ -166,7 +166,7 @@
                                     <span t-field="line.product_uom.name" groups="uom.group_uom"/>
                                 </td>
                                 <td>
-                                    <span t-field="line.product_id.image_medium"/>
+                                    <span> </span>
                                 </td>
                                 <td>
                                     <span t-field="line.name"/>
