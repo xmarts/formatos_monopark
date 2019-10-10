@@ -28,6 +28,9 @@
           <field name="empleado"/>
           <field name="num_pedido"/>
         </xpath>
+        <xpath expr="//field[@name='cdate_order']" position="after">
+          <field name="fecha_limite_pago"/>
+        </xpath>
       </field>
     </record>
   </data>
