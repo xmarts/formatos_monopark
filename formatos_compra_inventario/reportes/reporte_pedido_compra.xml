@@ -155,7 +155,6 @@
                                 <th class="text-right"><strong>Cantidad</strong></th>
                                 <th><strong>Imagen</strong></th>
                                 <th><strong>Descripción</strong></th>
-                                
                                 <th class="text-right"><strong>Precio Unitario</strong></th>
                                 <th class="text-right"><strong>Total</strong></th>
                             </tr>
@@ -167,7 +166,7 @@
                                     <span t-field="line.product_uom.name" groups="uom.group_uom"/>
                                 </td>
                                 <td>
-                                    <span t-field="line.imagen_producto"/>
+                                    <span t-field="line.product_id.image_medium"/>
                                 </td>
                                 <td>
                                     <span t-field="line.name"/>
