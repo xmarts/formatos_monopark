@@ -5,6 +5,7 @@
                 <div class="header">
                     <div class="row mt32 mb32">
                         <br/>
+                        <br/>
                         <div class="col-4 bm-2" style="font-size:9pt;">
                             <span t-if="o.company_id.vat"><span t-field="o.company_id.vat"/></span><br/>
                             <span style="width:100%;color:#F77B22;text-align:center;">CRISTÓBAL FRANCISCO DUEÑEZ BARBA</span><br/>
@@ -26,13 +27,21 @@
                             <br/>
                             <span t-field="o.company_id.phone"/>
                         </div>
-                        <div class="col-4 bm-2">
+                        <div class="col-6 bm-2">
                             <img t-attf-src="data:image/*;base64,{{o.company_id.logo}}" style="max-height:150px;max-width:210px;"/>
                         </div>
                         <div class="col-4 bm-2">
-                            <table class="table" style="width:70px;">
+                            <table class="table" style="width:100px;font-size:9pt;" border="1">
                                 <tr style="background-color:#EAEAEA;">
                                     <td>FOLIO</td>
+                                </tr>
+                                <tr>
+                                    <td>5555</td>
+                                </tr>
+                            </table>
+                            <table class="table" style="width:100px;font-size:9pt;">
+                                <tr style="background-color:#EAEAEA;">
+                                    <td>FECHA</td>
                                 </tr>
                                 <tr>
                                     <td>5555</td>
