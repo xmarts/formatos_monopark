@@ -14,6 +14,9 @@ class PurchaseOrder(models.Model):
 	num_pedido = fields.Char(string="Número de pedido")
 	fecha_limite_pago = fields.Date(string="Fecha limite de pago")
 
+	client=fields.Binary(string='Cliente')
+	consul=fields.Binary(string='Consultor')
+
 class ResPartner(models.Model):
 	_inherit = "res.partner.bank"
 

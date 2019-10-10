@@ -31,6 +31,20 @@
         <xpath expr="//field[@name='date_order']" position="after">
           <field name="fecha_limite_pago"/>
         </xpath>
+        <xpath expr="//page[2]" position="after">
+          <page name="firmas" string="Firmas:">
+            <group name="group3">                                        
+                <group name="groupasig">
+                    
+                    <field name="client" widget="signature"/>
+                </group>
+                <group name="groupasig2">
+                  
+                    <field name="consul" widget="signature"/>
+                </group>
+            </group>                                   
+          </page>
+        </xpath>
       </field>
     </record>
   </data>
