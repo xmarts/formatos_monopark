@@ -153,7 +153,6 @@
                         <thead>
                             <tr>  
                                 <th class="text-right"><strong>Cantidad</strong></th>
-                                <th><strong>Imagen</strong></th>
                                 <th><strong>Descripción</strong></th>
                                 <th class="text-right"><strong>Precio Unitario</strong></th>
                                 <th class="text-right"><strong>Total</strong></th>
@@ -164,9 +163,6 @@
                                 <td class="text-right">
                                     <span t-field="line.product_qty"/>
                                     <span t-field="line.product_uom.name" groups="uom.group_uom"/>
-                                </td>
-                                <td>
-                                    <span> </span>
                                 </td>
                                 <td>
                                     <span t-field="line.name"/>
