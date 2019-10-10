@@ -31,19 +31,21 @@
                             <img t-attf-src="data:image/*;base64,{{o.company_id.logo}}" style="max-height:200px;max-width:250px;"/>
                         </div>
                         <div class="col-4 bm-2">
+                            <br/>
                             <table style="width:130px;font-size:9pt;border:1px solid;text-align:center;">
-                                <tr style="background-color:#EAEAEA;height:15px;">
+                                <tr style="background-color:#EAEAEA;height:18px;">
                                     <td>FOLIO</td>
                                 </tr>
-                                <tr style="height:15px;">
+                                <tr style="height:18px;">
                                     <td>5555</td>
                                 </tr>
                             </table>
+                            <br/>
                             <table style="width:130px;font-size:9pt;border:1px solid;text-align:center;">
-                                <tr style="background-color:#EAEAEA;height:15px;">
+                                <tr style="background-color:#EAEAEA;height:18px;">
                                     <td>FECHA</td>
                                 </tr>
-                                <tr style="height:15px;;">
+                                <tr style="height:18px;;">
                                     <td>10-oct-2019</td>
                                 </tr>
                             </table>
@@ -103,7 +105,7 @@
                                     </tr>
                                 </t>
                             </table>
-                            <br/>
+                            
                             <strong>RFC:</strong>
                             <span t-field="o.partner_id.vat"/>
                             <br/>
@@ -149,6 +151,39 @@
 
                     <table class="table table-sm o_main_table">
                         <thead>
+                            <tr>  
+                                <th class="text-right"><strong>Cantidad</strong></th>
+                                <th><strong>Imagen</strong></th>
+                                <th><strong>Descripción</strong></th>
+                                
+                                <th class="text-right"><strong>Precio Unitario</strong></th>
+                                <th class="text-right"><strong>Total</strong></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr t-foreach="o.order_line" t-as="line">
+                                <td class="text-right">
+                                    <span t-field="line.product_qty"/>
+                                    <span t-field="line.product_uom.name" groups="uom.group_uom"/>
+                                </td>
+                                <td>
+                                    <span t-field="line.imagen_producto"/>
+                                </td>
+                                <td>
+                                    <span t-field="line.name"/>
+                                </td>
+                                <td class="text-right">
+                                    <span t-field="line.price_unit"/>
+                                </td>
+                                <td class="text-right">
+                                    <span t-field="line.price_subtotal" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: o.currency_id}"/>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <!--<table class="table table-sm o_main_table">
+                        <thead>
                             <tr>
                                 <th><strong>Descripción</strong></th>
                                 <th><strong>Impuestos</strong></th>
@@ -181,7 +216,7 @@
                                 </td>
                             </tr>
                         </tbody>
-                    </table>
+                    </table>-->
 
                     <div id="total" class="row justify-content-end">
                         <div class="col-4">
