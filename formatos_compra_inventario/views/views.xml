@@ -31,8 +31,8 @@
         <xpath expr="//field[@name='date_order']" position="after">
           <field name="fecha_limite_pago"/>
         </xpath>
-        <xpath expr="//page[2]" position="after">
-          <page name="firmas" string="Firmas:">
+        <xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='purchase_delivery_invoice']" position="after">
+          <page name="firmas" string="Firmas">
             <group name="group3">                                        
                 <group name="groupasig">
                     
