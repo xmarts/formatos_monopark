@@ -4,9 +4,10 @@
             <t t-call="web.basic_layout">
                 <div class="header">
                     <div class="row mt32 mb32">
-                        <div class="col-4 bm-2">
-                            <span style="width:100%;color:#F77B22;text-align:center;">CRISTÓBAL FRANCISCO DUEÑEZ BARBA</span><br/>
+                        <div class="col-6 bm-2" style="font-size:9pt;">
                             <span t-if="o.company_id.vat"><span t-field="o.company_id.vat"/></span><br/>
+                            <span style="width:100%;color:#F77B22;text-align:center;">CRISTÓBAL FRANCISCO DUEÑEZ BARBA</span><br/>
+                            
                             <span t-field="o.company_id.street"/>
                             <t>
                                 <span> Col. <span t-field="o.company_id.l10n_mx_edi_colony"/></span>
@@ -25,7 +26,7 @@
                             <span t-field="o.company_id.phone"/>
                         </div>
                         <div class="col-4 bm-2">
-                            <img t-attf-src="data:image/*;base64,{{o.company_id.logo}}" style="max-height:80px;max-width:120px;"/>
+                            <img t-attf-src="data:image/*;base64,{{o.company_id.logo}}" style="max-height:150px;max-width:200px;"/>
                         </div>
                     </div>
                 </div>
