@@ -23,6 +23,9 @@
           <field name="transporte"/>
           <field name="enatencion"/>
         </xpath>
+        <xpath expr="//field[@name='currency_id']" position="after">
+          <field name="tipo_de"/>
+        </xpath>
       </field>
     </record>
   </data>

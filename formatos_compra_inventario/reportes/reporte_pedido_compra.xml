@@ -10,7 +10,7 @@
                     <h2 t-if="o.state in ['purchase', 'done']">Confirmación de orden de compra #<span t-field="o.name"/></h2>
                     <h2 t-if="o.state == 'cancel'">Orden de compa cancelada #<span t-field="o.name"/></h2>
 
-                    <div id="informations" class="row mt32 mb32">
+                    <!--<div id="informations" class="row mt32 mb32">
                         <div t-if="o.name" class="col-3 bm-2">
                             <strong>Nuestra ref. pedido:</strong>
                             <p t-field="o.name" class="m-0"/>
@@ -23,8 +23,39 @@
                             <strong>Fecha de orden:</strong>
                             <p t-field="o.date_order" class="m-0"/>
                         </div>
+                    </div>-->
+                    <div id="informations" class="row mt32 mb32">
+                        <h3 class="text-center">Datos del proveedor</h3>
+                        <br/>
+                        <div class="col-6 bm-2">
+                            <strong>N. Comercial:</strong>
+                            <p t-field="o.partner_id.x_studio_nombre_comercial" class="m-0"/>
+                            <br/>
+                            <strong>Razón social:</strong>
+                            <p t-field="o.partner_id.name"/>
+                            <br/>
+                            <strong>Domicilio:</strong>
+                            <p t-field="o.partner_id.street"/>
+                            <br/>
+                            <strong>Colonia:</strong>
+                            <p t-field="o.partner_id.l10n_mx_edi_colony"/>
+                            <br/>
+                            <strong>C.P.:</strong>
+                            <p t-field="o.partner_id.zip"/>
+                            <br/>
+                            <strong>Ciudad:</strong>
+                            <p t-field="o.partner_id.city_id.name"/>
+                            <br/>
+                            <strong>Estado:</strong>
+                            <p t-field="o.partner_id.state_id.name"/>
+                            <br/>
+                            <strong>Tipo de:</strong>
+                            <p t-field="o.partner_id.tipo_de"/>
+                            <br/>
+                        </div>
                     </div>
-                    
+
+
                     <div class="row">
                         <div class="col-md-8" style="width:60%;">
                             <table style="margin-left:10px;" class="table table-striped">

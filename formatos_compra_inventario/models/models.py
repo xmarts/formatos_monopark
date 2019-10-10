@@ -9,6 +9,8 @@ class PurchaseOrder(models.Model):
 	transporte = fields.Char(string="Transporte")
 	enatencion = fields.Char(string="En atención")
 
+	tipo_de = fields.Selection([('tipo1', 'Tipo 1'),('tipo2', 'Tipo 2')], string="Tipo de")
+
 class ResPartner(models.Model):
 	_inherit = "res.partner.bank"
 
