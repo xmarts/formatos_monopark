@@ -24,7 +24,7 @@
                             <p t-field="o.date_order" class="m-0"/>
                         </div>
                     </div>-->
-                    <h3 class="text-center">Datos del proveedor</h3>
+                    <h4 class="text-center">Datos del proveedor</h4>
                     <div id="informations" class="row mt32 mb32">
                         <div class="col-6 bm-2">
                             <strong>N. Comercial:</strong>
@@ -37,7 +37,7 @@
                             <span t-field="o.partner_id.street"/>
                             <br/>
                             <strong>Colonia:</strong>
-                            <p t-field="o.partner_id.l10n_mx_edi_colony"/>
+                            <span t-field="o.partner_id.l10n_mx_edi_colony"/>
                             <br/>
                             <strong>C.P.:</strong>
                             <span t-field="o.partner_id.zip"/>
@@ -67,40 +67,48 @@
                                     </tr>
                                 </t>
                             </table>
+                            <br/>
+                            <strong>RFC:</strong>
+                            <span t-field="o.partner_id.vat"/>
+                            <br/>
+                            <strong>Telefono:</strong>
+                            <span t-field="o.partner_id.phone"/>
+                            <br/>
+                            <strong>Contacto:</strong>
+                            <span t-field="o.partner_id.phone"/>
+                            <br/>
+                            <strong>E-mail:</strong>
+                            <span t-field="o.partner_id.email"/>
                         </div>
                     </div>
 
 
-                    <div class="row">
-                        <div class="col-md-8" style="width:60%;">
-                            <table style="margin-left:10px;" class="table table-striped">
-                                <tr>
-                                   <th>Banco</th>
-                                   <th>No. Cuenta</th>
-                                   <th>Clabe</th>
-                                </tr>
-                                <t t-foreach="o.partner_id.bank_ids" t-as="line">
-                                    <tr>
-                                        <td><span t-field="line.bank_id"/></td>
-                                        <td><span t-field="line.acc_number"/></td>
-                                        <td><span t-field="line.clabe_campo"/></td>
-                                    </tr>
-                                </t>
-                            </table>
+                    <div id="informations" class="row mt32 mb32">
+                        <div class="col-6 bm-2">
+                            <strong>Cedis:</strong>
+                            <span t-field="o.picking_type_id.warehouse_id.name"/>
+                            <br/>
+                            <strong>Requisitor:</strong>
+                            <span t-field="o.empleado.department_id.name"/>
+                            <br/>
+                            <strong>Transporte:</strong>
+                            <span t-field="o.transporte"/>
+                            <br/>
+                            <strong>En atención:</strong>
+                            <span t-field="o.empleado.name"/>
                         </div>
-                        <div class="col-md-4" style="width:40%;">
-                            <div t-if="o.cedis">
-                                <strong>Cedis:</strong>
-                                <span t-field="o.cedis"/>
-                            </div>
-                            <div t-if="o.transporte">
-                                <strong>Transporte:</strong>
-                                <span t-field="o.transporte"/>
-                            </div>
-                            <div t-if="o.enatencion">
-                                <strong>En atención:</strong>
-                                <span t-field="o.enatencion"/>
-                            </div>
+                        <div class="col-6 bm-2">
+                            <strong>Tiempo entrega:</strong>
+                            <span t-field="o.date_planned"/>
+                            <br/>
+                            <strong>Condiciones de pago:</strong>
+                            <span t-field="o.payment_term_id.name"/>
+                            <br/>
+                            <strong>Elaboró:</strong>
+                            <span t-field="o.user_id.name"/>
+                            <br/>
+                            <strong>Número de pedido:</strong>
+                            <span t-field="o.num_pedido"/>
                         </div>
                     </div>
                     <br/>

@@ -10,6 +10,8 @@ class PurchaseOrder(models.Model):
 	enatencion = fields.Char(string="En atención")
 
 	tipo_de = fields.Selection([('tipo1', 'Tipo 1'),('tipo2', 'Tipo 2')], string="Tipo de")
+	empleado = fields.Many2one('hr.employee', string="Empleado")
+	num_pedido = fields.Char(string="Número de pedido")
 
 class ResPartner(models.Model):
 	_inherit = "res.partner.bank"
