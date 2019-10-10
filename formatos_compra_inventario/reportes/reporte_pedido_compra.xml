@@ -3,8 +3,9 @@
         <xpath expr="//t[@t-call='web.external_layout']" position="replace">
             <t t-call="web.basic_layout">
                 <div class="header">
-                    <div class="row mt32 mb32" style="margin-top:15px;">
+                    <div class="row mt32 mb32">
                         <div class="col-4 bm-2" style="font-size:9pt;">
+                            <br/>
                             <span t-if="o.company_id.vat"><span t-field="o.company_id.vat"/></span><br/>
                             <span style="width:100%;color:#F77B22;text-align:center;">CRISTÓBAL FRANCISCO DUEÑEZ BARBA</span><br/>
                             
@@ -26,23 +27,24 @@
                             <span t-field="o.company_id.phone"/>
                         </div>
                         <div class="col-6 bm-2">
-                            <img t-attf-src="data:image/*;base64,{{o.company_id.logo}}" style="max-height:150px;max-width:210px;"/>
+                            <br/>
+                            <img t-attf-src="data:image/*;base64,{{o.company_id.logo}}" style="max-height:180px;max-width:230px;"/>
                         </div>
                         <div class="col-4 bm-2">
-                            <table class="table" style="width:120px;font-size:9pt;border:1px;">
-                                <tr style="background-color:#EAEAEA;height:15px;">
+                            <table class="table" style="width:120px;font-size:9pt;border:1px solid;">
+                                <tr style="background-color:#EAEAEA;max-height:15px;">
                                     <td>FOLIO</td>
                                 </tr>
                                 <tr>
                                     <td>5555</td>
                                 </tr>
                             </table>
-                            <table class="table" style="width:120px;font-size:9pt;border:1px;">
+                            <table class="table" style="width:120px;font-size:9pt;border:1px solid;">
                                 <tr style="background-color:#EAEAEA;">
                                     <td>FECHA</td>
                                 </tr>
                                 <tr>
-                                    <td>5555</td>
+                                    <td>10-oct-2019</td>
                                 </tr>
                             </table>
                         </div>
@@ -50,11 +52,12 @@
                 </div>
                 <div class="page">
                     <div class="oe_structure"/>
-
-                    <h2 t-if="o.state == 'draft'">Solicitud de presupuesto  #<span t-field="o.name"/></h2>
-                    <h2 t-if="o.state in ['sent', 'to approve']">Orden de compra #<span t-field="o.name"/></h2>
-                    <h2 t-if="o.state in ['purchase', 'done']">Confirmación de orden de compra #<span t-field="o.name"/></h2>
-                    <h2 t-if="o.state == 'cancel'">Orden de compa cancelada #<span t-field="o.name"/></h2>
+                    <div style="text-align:center">
+                        <h2 t-if="o.state == 'draft'">Solicitud de presupuesto  #<span t-field="o.name"/></h2>
+                        <h2 t-if="o.state in ['sent', 'to approve']">Orden de compra #<span t-field="o.name"/></h2>
+                        <h2 t-if="o.state in ['purchase', 'done']">Confirmación de orden de compra #<span t-field="o.name"/></h2>
+                        <h2 t-if="o.state == 'cancel'">Orden de compa cancelada #<span t-field="o.name"/></h2>
+                    </div>
 
                     <h4 class="text-center">Datos del proveedor</h4>
                     <div id="informations" class="row mt32 mb32">
