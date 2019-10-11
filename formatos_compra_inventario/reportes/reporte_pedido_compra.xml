@@ -113,7 +113,7 @@
                             <span t-field="o.partner_id.phone"/>
                             <br/>
                             <strong>Contacto:</strong>
-                            <t t-foreach="partner_id.child_ids" t-as="line">
+                            <t t-foreach="o.partner_id.child_ids" t-as="line">
                                 <span t-field="line.name"/>
                             </t>
                             <br/>
