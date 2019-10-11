@@ -9,7 +9,7 @@ class PurchaseOrder(models.Model):
 	transporte = fields.Char(string="Transporte")
 	enatencion = fields.Char(string="En atención")
 
-	tipo_de = fields.Selection([('tipo1', 'Tipo 1'),('tipo2', 'Tipo 2')], string="Tipo de")
+	tipo_de = fields.Selection([('tipo1', 'Insumos'),('tipo2', 'Herramientas de trabajo'),('tipo3','Materiales'),('tipo4','Servicios'),('tipo5','Subministros'),('tipo6','Refacciones'),('tipo7','Compra')], string="Tipo de")
 	empleado = fields.Many2one('hr.employee', string="Empleado")
 	num_pedido = fields.Char(string="Número de pedido")
 	fecha_limite_pago = fields.Date(string="Fecha limite de pago")
