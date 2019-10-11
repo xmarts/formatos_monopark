@@ -14,7 +14,7 @@
     </record>
     <!--AGREGAR TRES CAMPOS A LA VISTA DE VENTAS EN EL MOD DE VENTAS-->
     <record id="add_fields_purchase" model="ir.ui.view"> 
-      <field name="name">Add fields</field>
+      <field name="name">Add field</field>
       <field name="model">purchase.order</field>
       <field name="inherit_id" ref="purchase.purchase_order_form"/>
       <field name="arch" type="xml">
