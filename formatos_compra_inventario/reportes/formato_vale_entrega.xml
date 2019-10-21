@@ -1,0 +1,13 @@
+<data>
+    <template id="reporte_vale_entrega" inherit_id="stock.report_delivery_document">
+        <xpath expr="/t/t/t/div[1]/p[1]" position="before">
+            <br/>
+            <t t-if="o.obser_recep">
+                <strong>Observaciones</strong>
+                <br/>
+                <span t-field="o.obser_recep"/>
+            </t>   
+        </xpath>        
+    </template>
+</data>
+                         

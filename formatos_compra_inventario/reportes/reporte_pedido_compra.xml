@@ -10,9 +10,10 @@
                             <span style="width:100%;color:#F77B22;text-align:center;">CRISTÓBAL FRANCISCO DUEÑEZ BARBA</span><br/>
                             
                             <span t-field="o.company_id.street"/>
+                            <!--
                             <t>
                                 <span> Col. <span t-field="o.company_id.l10n_mx_edi_colony"/></span>
-                            </t>
+                            </t>-->
                             <br/>
                             <t t-if="o.company_id.zip">
                                 <span> C.P.<span t-field="o.company_id.zip"/></span>
@@ -65,18 +66,18 @@
                     <h4 class="text-center" style="background-color:#EAEAEA;padding:5px;">Datos del proveedor</h4>
                     <div id="informations" class="row mt32 mb32" style="border:1px solid;padding:10px;">
                         <div class="col-6 bm-2">
-                            <strong>N. Comercial:</strong>
+                            <!--<strong>N. Comercial:</strong>
                             <span t-field="o.partner_id.x_studio_nombre_comercial" class="m-0"/>
-                            <br/>
+                            <br/>-->
                             <strong>Razón social:</strong>
                             <span t-field="o.partner_id.name"/>
                             <br/>
                             <strong>Domicilio:</strong>
                             <span t-field="o.partner_id.street"/>
                             <br/>
-                            <strong>Colonia:</strong>
+                            <!--<strong>Colonia:</strong>
                             <span t-field="o.partner_id.l10n_mx_edi_colony"/>
-                            <br/>
+                            <br/>-->
                             <strong>C.P.:</strong>
                             <span t-field="o.partner_id.zip"/>
                             <br/>
@@ -113,9 +114,7 @@
                             <span t-field="o.partner_id.phone"/>
                             <br/>
                             <strong>Contacto:</strong>
-                            <t t-foreach="o.partner_id.child_ids" t-as="line">
-                                <span t-field="line.name"/>
-                            </t>
+                            <span name="o.partner_id.name"/>
                             <br/>
                             <strong>E-mail:</strong>
                             <span t-field="o.partner_id.email"/>
@@ -135,6 +134,14 @@
                             <br/>
                             <strong>En atención:</strong>
                             <span t-field="o.empleado.name"/>
+
+                            <!--CAMBIOS DEL 201019-->
+                            <t t-if="o.ref_banco">
+                                <br/>
+                                <strong>Referencia del banco</strong>
+                                <span t-field="o.ref_banco"/>
+                            </t>
+
                         </div>
                         <div class="col-6 bm-2">
                             <strong>Tiempo entrega:</strong>
@@ -250,12 +257,12 @@
                             </table>
                         </div>
                     </div>
-
+                    <br/>
                     <table class="table">
                         <tr>
-                            <td style="border-top: 0px solid white;text-align:center;"><img t-attf-src="data:image/*;base64,{{o.client}}" style="text-align:center;max-height:80px;max-width:120px;"/></td>
+                            <td style="border-top: 0px solid white;text-align:center;">_______________________________</td>
                             
-                            <td style="border-top: 0px solid white;text-align:center;"><img t-attf-src="data:image/*;base64,{{o.consul}}" style="text-align:center;max-height:100px;max-width:150px;"/></td>
+                            <td style="border-top: 0px solid white;text-align:center;">_______________________________</td>
                         </tr>
                         <tr>
                             <td style="border-top: 0px solid white; text-align:center; ">Cliente</td>

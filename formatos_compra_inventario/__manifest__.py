@@ -32,7 +32,8 @@
         'reportes/layout_formato_instalacion.xml',
         'reportes/template_formato_instalacion.xml',
         'reportes/layout_formato_entrega_cliente.xml',
-        'reportes/template_formato_entrega_cliente.xml'
+        'reportes/template_formato_entrega_cliente.xml',
+        'reportes/formato_vale_entrega.xml'
     ],
     # only loaded in demonstration mode
     'demo': [

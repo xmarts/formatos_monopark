@@ -10,6 +10,9 @@
           <field name="entrega"/>
           <field name="instaladores"/>
         </xpath>
+        <xpath expr="//field[@name='origin']" position="after">
+          <field name="obser_recep"/>
+        </xpath>
       </field>
     </record>
     <!--AGREGAR TRES CAMPOS A LA VISTA DE VENTAS EN EL MOD DE VENTAS-->
@@ -19,19 +22,31 @@
       <field name="inherit_id" ref="purchase.purchase_order_form"/>
       <field name="arch" type="xml">
         <xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='purchase_delivery_invoice']/group[1]/group[1]/div[1]" position="after">
-          <field name="cedis"/>
+
+          <!--CAMBIOS DEL 201019-->
+          <!--<field name="cedis"/>-->
+
           <field name="transporte"/>
-          <field name="enatencion"/>
+
+          <!--CAMBIOS DEL 201019-->
+          <!--<field name="enatencion"/>-->
+          
         </xpath>
         <xpath expr="//field[@name='currency_id']" position="after">
           <field name="tipo_de"/>
           <field name="empleado"/>
+          
+          <!--CAMBIOS DEL 201019-->
+          <field name="solicito"/>
+          
           <field name="num_pedido"/>
         </xpath>
         <xpath expr="//field[@name='date_order']" position="after">
           <field name="fecha_limite_pago"/>
         </xpath>
-        <xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='purchase_delivery_invoice']" position="after">
+
+        <!--CAMBIOS DEL 201019-->
+        <!--<xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='purchase_delivery_invoice']" position="after">
           <page name="firmas" string="Firmas">
             <group name="group3">                                        
                 <group name="groupasig">
@@ -44,7 +59,8 @@
                 </group>
             </group>                                   
           </page>
-        </xpath>
+        </xpath>-->
+
       </field>
     </record>
   </data>

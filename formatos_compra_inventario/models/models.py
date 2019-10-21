@@ -10,7 +10,10 @@ class PurchaseOrder(models.Model):
 	enatencion = fields.Char(string="En atención")
 
 	tipo_de = fields.Selection([('tipo1', 'Insumos'),('tipo2', 'Herramientas de trabajo'),('tipo3','Materiales'),('tipo4','Servicios'),('tipo5','Subministros'),('tipo6','Refacciones'),('tipo7','Compra')], string="Tipo de")
-	empleado = fields.Many2one('hr.employee', string="Empleado")
+	empleado = fields.Many2one('hr.employee', string="Atención a.")
+
+	#CAMBIOS DEL 201019
+	solicito = fields.Many2one('hr.employee', string="Solicitado por")
 	num_pedido = fields.Char(string="Número de pedido")
 	fecha_limite_pago = fields.Date(string="Fecha limite de pago")
 
@@ -32,3 +35,4 @@ class StockPicking(models.Model):
 
 	entrega = fields.Char(string="Entrega")
 	instaladores = fields.Char(string="Instaladores")
+	obser_recep = fields.Text(string="Observaciones")
