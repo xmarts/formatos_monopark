@@ -114,7 +114,11 @@
                             <span t-field="o.partner_id.phone"/>
                             <br/>
                             <strong>Contacto:</strong>
-                            <span name="o.partner_id.name"/>
+                            <t t-foreach="o.partner_id.child_ids" t-as="line">
+                                <t t-if="line.type == 'contact'">
+                                    <span t-field="line.name"/>
+                                </t>
+                            </t>
                             <br/>
                             <strong>E-mail:</strong>
                             <span t-field="o.partner_id.email"/>
