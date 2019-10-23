@@ -66,11 +66,11 @@
                         <t t-set="has_serial_number" t-value="o.move_line_ids.mapped('lot_id')"/>
                         <thead>
                             <tr>
-                                <th><strong>Product</strong></th>
+                                <th><strong>Producto</strong></th>
                                 <th name="lot_serial" t-if="has_serial_number" groups="stock.group_lot_on_delivery_slip">
                                     Lot/Serial Number
                                 </th>
-                                <th class="text-center"><strong>Quantity</strong></th>
+                                <th class="text-center"><strong>Cantidad</strong></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -99,7 +99,7 @@
                     </table>
                     <br/>
                     <t t-if="o.obser_recep">
-                        <strong>Observaciones</strong>
+                        <strong>Observaciones:</strong>
                         <br/>
                         <span t-field="o.obser_recep"/>
                     </t>   
