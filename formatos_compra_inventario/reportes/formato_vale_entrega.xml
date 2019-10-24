@@ -1,5 +1,5 @@
 <odoo>
-    <template id="reporte_vale_entrega" inherit_id="stock.report_delivery_document_copy_1">
+    <template id="reporte_vale_entrega" inherit_id="stock.report_deliveryslip_copy_1">
         <xpath expr="//t[@t-call='web.external_layout']/div[1]" position="replace">
             <div class="page">
                     <h2>
