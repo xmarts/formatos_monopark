@@ -2,9 +2,16 @@
 	<template id="formato_vale_entrega">
 		<t t-call="web.html_container">
 			<t t-call="web.external_layout">
-                <t>
+                <t t-foreach="docs" t-as="o">
+                    <h4>Reporte de vale de entrega</h4>
+                    <div style="text-align:right">
+                        <span style="width:350px;">
+                            <span t-field="o.partner_id.name"/>
+                            <br/>
+                            <span t-field="o.partner_id.street"/>
+                        </span>
+                    </div>
 					<div class="page">
-                        <div t-foreach="docs" t-as="o">
                             <h2>
                                 <span t-field="o.name"/>
                             </h2>
@@ -133,7 +140,7 @@
                                     No se pudieron enviar todos los artículos, los restantes se enviarán tan pronto como estén disponibles.
                                 </t>
                             </p>
-                        </div>
+                        
                     </div>       
 				</t>
 			</t>
