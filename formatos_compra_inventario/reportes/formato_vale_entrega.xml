@@ -53,7 +53,9 @@
                                     <tr>
                                         <th><strong>Imagen</strong></th>
                                         <th style="width:180px;"><strong>Producto</strong></th>
-                                        <th style="width:350px;"><strong>Cantidad</strong></th>
+                                        <th><strong>Cantidad</strong></th>
+                                        <th style="width:350px;"><strong>Observaciones</strong></th>
+                                        <th><strong>Bultos y cargado</strong></th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -77,6 +79,10 @@
                                             <span t-field="move.product_uom_qty"/>
                                             <span t-field="move.product_uom"/>
                                         </td>
+                                        <td>
+                                            <span t-field="move_line.product_id.description_sale"/>
+                                        </td>
+                                        <td></td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -91,6 +97,7 @@
                                         </th>
                                         <th class="text-center"><strong>Cantidad</strong></th>
                                         <th style="width:350px;"><strong>Observaciones</strong></th>
+                                        <th><strong>Bultos y cargado</strong></th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -122,10 +129,11 @@
                                         <td>
                                             <span t-field="move_line.product_id.description_sale"/>
                                         </td>
+                                        <td></td>
                                     </tr>
                                     <tr>
-                                        <td colspan="5" style="text-align:right;">
-                                            <strong>Total de piezas </strong>
+                                        <td colspan="5" style="text-align:right;font-size:11pt;padding:5px;">
+                                            <strong>Total de piezas: </strong>
                                             <span t-esc="sum(line.qty_done for line in o.move_line_ids)"/>
                                         </td>
                                     </tr>
