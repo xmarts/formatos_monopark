@@ -75,6 +75,7 @@
                                             Lot/Serial Number
                                         </th>
                                         <th class="text-center"><strong>Cantidad</strong></th>
+                                        <th><strong>Observaciones</strong></th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -102,6 +103,9 @@
                                         <td class="text-center">
                                             <span t-field="move_line.qty_done"/>
                                             <span t-field="move_line.product_uom_id"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="move_line.product_id.description_sale"/>
                                         </td>
                                     </tr>
                                 </tbody>
