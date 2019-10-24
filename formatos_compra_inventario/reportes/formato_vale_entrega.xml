@@ -5,10 +5,16 @@
                 <t t-foreach="docs" t-as="o">
                     <h4>Reporte de vale de entrega</h4>
                     <div style="text-align:right">
-                        <span style="width:350px;">
+                        <span style="width:350px; text-align:left;">
                             <span t-field="o.partner_id.name"/>
                             <br/>
                             <span t-field="o.partner_id.street"/>
+                            <br/>
+                            <span><span t-field="o.partner_id.zip"/> <span t-field="o.partner_id.city"/> <span f-field="o.partner_id.state_id.code"/></span>
+                            <br/>
+                            <span t-field="o.partner_id.country_id.name"/>
+                            <br/>
+                            <span t-field="o.partner_id.phone"/>
                         </span>
                     </div>
 					<div class="page">
