@@ -125,7 +125,7 @@
                                     </tr>
                                     <tr>
                                         <td colspan="5">
-                                            <span t-esc="sum(move_line.quantity_done)"/>
+                                            <span t-esc="sum(line.quantity_done for line in o.move_line_ids)"/>
                                         </td>
                                     </tr>
                                 </tbody>
