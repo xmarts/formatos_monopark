@@ -4,8 +4,8 @@
 			<t t-call="web.external_layout">
                 <t t-foreach="docs" t-as="o">
                     <h3 style="text-align:center;">Reporte de vale de entrega</h3>
-                    <div style="text-align:right">
-                        <div style="width:320px;">
+                    <div>
+                        <div style="width:40%;margin-left:60%;">
                             <p>
                             <span t-field="o.partner_id.name"/>
                             <br/>
@@ -124,7 +124,8 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td colspan="5">
+                                        <td colspan="5" style="text-align:right;">
+                                            <strong>Total de piezas </strong>
                                             <span t-esc="sum(line.qty_done for line in o.move_line_ids)"/>
                                         </td>
                                     </tr>
