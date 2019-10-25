@@ -35,6 +35,10 @@
 										<strong>Cliente: </strong>
 										<span t-field="o.partner_id"/>
 									</div>
+									<div t-if="o.fecha_actual">
+										<strong>Fecha de impresión: </strong>
+										<span t-field="o.fecha_actual"/>
+									</div>
 								</tr>
 							</table>
 							<br/>
