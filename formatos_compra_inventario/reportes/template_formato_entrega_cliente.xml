@@ -37,7 +37,7 @@
 									</div>
 									<div>
 										<strong>Fecha de impresión: </strong>
-										<sapn t-esc="datetime.datetime.strptime(o.current_date, '%Y-%m-%d %H:%M:%S').strftime('%b %d,%Y %H:%M %p')"/>
+										<span t-field="o.current_date"/>
 									</div>
 								</tr>
 							</table>

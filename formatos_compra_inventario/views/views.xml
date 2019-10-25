@@ -24,45 +24,17 @@
       <field name="inherit_id" ref="purchase.purchase_order_form"/>
       <field name="arch" type="xml">
         <xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='purchase_delivery_invoice']/group[1]/group[1]/div[1]" position="after">
-
-          <!--CAMBIOS DEL 201019-->
-          <!--<field name="cedis"/>-->
-
-          <field name="transporte"/>
-
-          <!--CAMBIOS DEL 201019-->
-          <!--<field name="enatencion"/>-->
-          
+          <field name="transporte"/>     
         </xpath>
         <xpath expr="//field[@name='currency_id']" position="after">
           <field name="tipo_de"/>
           <field name="empleado"/>
-          
-          <!--CAMBIOS DEL 201019-->
           <field name="solicito"/>
-          
           <field name="num_pedido"/>
         </xpath>
         <xpath expr="//field[@name='date_order']" position="after">
           <field name="fecha_limite_pago"/>
         </xpath>
-
-        <!--CAMBIOS DEL 201019-->
-        <!--<xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='purchase_delivery_invoice']" position="after">
-          <page name="firmas" string="Firmas">
-            <group name="group3">                                        
-                <group name="groupasig">
-                    
-                    <field name="client" widget="signature"/>
-                </group>
-                <group name="groupasig2">
-                  
-                    <field name="consul" widget="signature"/>
-                </group>
-            </group>                                   
-          </page>
-        </xpath>-->
-
       </field>
     </record>
   </data>
