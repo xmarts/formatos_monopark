@@ -37,4 +37,3 @@ class StockPicking(models.Model):
 	instaladores = fields.Char(string="Instaladores")
 	obser_recep = fields.Text(string="Observaciones")
 	obser_esp = fields.Text(string="Condiciones especiales")
-	current_date = fields.Date(default=time.strftime("%Y-%m-%d"))

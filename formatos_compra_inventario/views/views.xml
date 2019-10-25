@@ -13,7 +13,6 @@
         <xpath expr="//field[@name='origin']" position="after">
           <field name="obser_recep"/>
           <field name="obser_esp"/>
-          <field name="current_date"/>
         </xpath>
       </field>
     </record>
