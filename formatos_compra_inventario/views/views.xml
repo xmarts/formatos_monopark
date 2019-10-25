@@ -12,6 +12,7 @@
         </xpath>
         <xpath expr="//field[@name='origin']" position="after">
           <field name="obser_recep"/>
+          <field name="obser_esp"/>
         </xpath>
       </field>
     </record>

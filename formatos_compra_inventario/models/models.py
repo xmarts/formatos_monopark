@@ -36,3 +36,4 @@ class StockPicking(models.Model):
 	entrega = fields.Char(string="Entrega")
 	instaladores = fields.Char(string="Instaladores")
 	obser_recep = fields.Text(string="Observaciones")
+	obser_esp = fields.Text(string="Condiciones especiales")
