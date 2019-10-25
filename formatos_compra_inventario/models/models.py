@@ -37,3 +37,10 @@ class StockPicking(models.Model):
 	instaladores = fields.Char(string="Instaladores")
 	obser_recep = fields.Text(string="Observaciones")
 	obser_esp = fields.Text(string="Condiciones especiales")
+	fecha_actual = fields.Char(string="Fecha actual", compute="_compute_fecha_actual")
+
+	@api.one
+	def _compute_fecha_actual(self):
+		fecha = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+		self.fecha_actual = fecha
+		
