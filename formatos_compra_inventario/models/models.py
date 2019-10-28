@@ -44,4 +44,10 @@ class StockPicking(models.Model):
 	def _compute_fecha_actual(self):
 		fecha = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
 		self.fecha_actual = fecha
+
+class StockMove(models.Model):
+	_inherit = "stock.move"
+
+	observacion_pro = fields.Text()
+	bultos = fields.Integer()
 		

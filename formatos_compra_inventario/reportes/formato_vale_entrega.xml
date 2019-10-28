@@ -55,7 +55,8 @@
                                         <th style="width:180px;"><strong>Producto</strong></th>
                                         <th><strong>Cantidad</strong></th>
                                         <th style="width:350px;"><strong>Observaciones</strong></th>
-                                        <th><strong>Bultos y cargado</strong></th>
+                                        <th><strong>Bultos</strong></th>
+                                        <th><strong>Cargado</strong></th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -82,6 +83,9 @@
                                         <td>
                                             <span t-field="move_line.product_id.description_sale"/>
                                         </td>
+                                        <td>
+                                            
+                                        </td>
                                         <td></td>
                                     </tr>
                                 </tbody>
@@ -97,7 +101,8 @@
                                         </th>
                                         <th class="text-center"><strong>Cantidad</strong></th>
                                         <th style="width:350px;"><strong>Observaciones</strong></th>
-                                        <th><strong>Bultos y cargado</strong></th>
+                                        <th><strong>Bultos</strong></th>
+                                        <th><strong>Cargado</strong></th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -130,11 +135,14 @@
                                             <span t-field="move_line.product_id.description_sale"/>
                                         </td>
                                         <td></td>
+                                        <td></td>
                                     </tr>
                                     <tr>
                                         <td colspan="5" style="text-align:right;font-size:11pt;padding:5px;">
-                                            <strong>Total de piezas: </strong>
+                                            <strong>Total de bultos: </strong>
                                             <span t-esc="sum(line.qty_done for line in o.move_line_ids)"/>
+                                            <br/>
+                                            <strong>Total de cargados:<th><strong>Bultos y cargado</strong></th></strong>
                                         </td>
                                     </tr>
                                 </tbody>
