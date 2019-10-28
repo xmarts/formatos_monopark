@@ -106,8 +106,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr t-foreach="o.move_line_ids" t-as="move_line">
-                                        <t t-foreach="o.move_ids_without_package" t-as="x">
+                                    <!--<tr t-foreach="o.move_line_ids" t-as="move_line">
                                         <td>
                                             <t t-if="move_line.product_id.image_small">
                                                 <img t-attf-src="data:image/*;base64,{{move_line.product_id.image_small}}"/>
@@ -133,13 +132,45 @@
                                             <span t-field="move_line.product_uom_id"/>
                                         </td>
                                         <td>
-                                            <span f-field="x.observacion_pro"/>
+                                        
                                         </td>
                                         <td>
-                                            <span f-field="x.bultos"/>
+                                            
                                         </td>
                                         <td></td>
-                                        </t>
+                                    </tr>-->
+                                    <tr t-foreach="o.move_ids_without_package" t-as="move_line">
+                                        <td>
+                                            <t t-if="move_line.product_id.image_small">
+                                                <img t-attf-src="data:image/*;base64,{{move_line.product_id.image_small}}"/>
+                                            </t>
+                                        </td>
+                                        <td>
+                                            <span t-field="move_line.product_id"/>
+                                            <p t-if="o.picking_type_code == 'outgoing'">
+                                                <span t-field="move_line.product_id.sudo().description_pickingout"/>
+                                            </p>
+                                            <p t-if="o.picking_type_code == 'incoming'">
+                                                <span t-field="move_line.product_id.sudo().description_pickingin"/>
+                                            </p>
+                                        </td>
+                                        <td t-if="has_serial_number and move_line.lot_name" groups="stock.group_lot_on_delivery_slip">
+                                            <span t-field="move_line.lot_name"/>
+                                        </td>
+                                        <td t-elif="has_serial_number" groups="stock.group_lot_on_delivery_slip">
+                                            <span t-field="move_line.lot_id.name"/>
+                                        </td>
+                                        <td class="text-center">
+                                            <span t-field="move_line.qty_done"/>
+                                            <span t-field="move_line.product_uom_id"/>
+                                        </td>
+                                        <td>
+                                        
+                                        </td>
+                                        <td>
+                                            
+                                        </td>
+                                        <td></td>
                                     </tr>
                                     <tr>
                                         <td colspan="5" style="text-align:right;font-size:11pt;padding:5px;">
