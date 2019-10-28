@@ -107,6 +107,7 @@
                                 </thead>
                                 <tbody>
                                     <tr t-foreach="o.move_line_ids" t-as="move_line">
+                                        <t t-foreach="o.move_ids_without_package" t-as="x">
                                         <td>
                                             <t t-if="move_line.product_id.image_small">
                                                 <img t-attf-src="data:image/*;base64,{{move_line.product_id.image_small}}"/>
@@ -132,12 +133,13 @@
                                             <span t-field="move_line.product_uom_id"/>
                                         </td>
                                         <td>
-                                            Lines
+                                            <span f-field="x.observacion_pro"/>
                                         </td>
                                         <td>
-                                            
+                                            <span f-field="x.bultos"/>
                                         </td>
                                         <td></td>
+                                        </t>
                                     </tr>
                                     <tr>
                                         <td colspan="5" style="text-align:right;font-size:11pt;padding:5px;">
