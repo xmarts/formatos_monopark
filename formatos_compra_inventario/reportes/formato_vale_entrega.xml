@@ -81,10 +81,10 @@
                                             <span t-field="move.product_uom"/>
                                         </td>
                                         <td>
-                                            <span t-field="move_line.product_id.description_sale"/>
+                                            <span t-field="move.observacion_pro"/>
                                         </td>
                                         <td>
-                                            
+                                            <span t-field="move.bultos"/>
                                         </td>
                                         <td></td>
                                     </tr>
@@ -132,17 +132,19 @@
                                             <span t-field="move_line.product_uom_id"/>
                                         </td>
                                         <td>
-                                            <span t-field="move_line.product_id.description_sale"/>
+                                            <span t-field="move_line.observacion_pro"/>
                                         </td>
-                                        <td></td>
+                                        <td>
+                                            <span t-field="move_line.bultos"/>
+                                        </td>
                                         <td></td>
                                     </tr>
                                     <tr>
                                         <td colspan="5" style="text-align:right;font-size:11pt;padding:5px;">
                                             <strong>Total de bultos: </strong>
-                                            <span t-esc="sum(line.qty_done for line in o.move_line_ids)"/>
+                                            <span t-esc="sum(line.bultos for line in o.move_line_ids)"/>
                                             <br/>
-                                            <strong>Total de cargados:<th><strong>Bultos y cargado</strong></th></strong>
+                                            <strong>Total de cargados:</strong>
                                         </td>
                                     </tr>
                                 </tbody>
