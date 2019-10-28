@@ -170,7 +170,7 @@
                                             <span t-field="move_line.bultos"/>
                                         </td>
                                         <td>
-                                        
+                                            <span>Sin valor</span>
                                         </td>
                                     </tr>
                                     <tr>
