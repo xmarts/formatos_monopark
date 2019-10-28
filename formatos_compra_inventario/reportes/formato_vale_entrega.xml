@@ -164,17 +164,19 @@
                                             <span t-field="move_line.quantity_done"/>
                                         </td>
                                         <td>
-                                        
+                                            <span t-field="move_line.observacion_pro"/>
                                         </td>
                                         <td>
-                                            
+                                            <span t-field="move_line.bultos"/>
                                         </td>
-                                        <td></td>
+                                        <td>
+                                        
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td colspan="5" style="text-align:right;font-size:11pt;padding:5px;">
                                             <strong>Total de bultos: </strong>
-                                            
+                                            <span t-esc="sum(line.quantity_done for line in o.move_ids_without_package)"/>
                                             <br/>
                                             <strong>Total de cargados:</strong>
                                         </td>
