@@ -161,8 +161,7 @@
                                             <span t-field="move_line.lot_id.name"/>
                                         </td>
                                         <td class="text-center">
-                                            <span t-field="move_line.qty_done"/>
-                                            <span t-field="move_line.product_uom_id"/>
+                                            <span t-field="move_line.quantity_done"/>
                                         </td>
                                         <td>
                                         
