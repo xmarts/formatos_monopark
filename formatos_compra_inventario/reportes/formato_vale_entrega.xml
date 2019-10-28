@@ -81,7 +81,7 @@
                                             <span t-field="move.product_uom"/>
                                         </td>
                                         <td>
-                                            <span t-field="move.observacion_pro"/>
+                                            
                                         </td>
                                         <td>
                                             <span t-field="move.bultos"/>
@@ -132,7 +132,7 @@
                                             <span t-field="move_line.product_uom_id"/>
                                         </td>
                                         <td>
-                                            <span t-field="move_line.observacion_pro"/>
+                                            Lines
                                         </td>
                                         <td>
                                             <span t-field="move_line.bultos"/>
