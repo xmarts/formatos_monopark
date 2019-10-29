@@ -76,17 +76,18 @@
                                                 <span t-field="move.product_id.sudo().description_pickingin"/>
                                             </p>
                                         </td>
-                                        <td>
-                                            <span t-field="move.product_uom_qty"/>
-                                            <span t-field="move.product_uom"/>
+                                        <td class="text-center">
+                                            <span t-field="move.quantity_done"/>
                                         </td>
                                         <td>
                                             <span t-field="move.observacion_pro"/>
                                         </td>
                                         <td>
-                                            <span f-field="move.bultos"/>
+                                            <span t-field="move.bultos"/>
                                         </td>
-                                        <td></td>
+                                        <td>
+                                            
+                                        </td>
                                     </tr>
                                     <!--<t t-set="lines" t-value="o.move_lines.filtered(lambda x: x.product_uom_qty)"/>
                                     <tr t-foreach="lines" t-as="move">
@@ -198,7 +199,7 @@
                                             <span t-field="move_line.bultos"/>
                                         </td>
                                         <td>
-                                            <span>Tabla 2</span>
+                                            
                                         </td>
                                     </tr>
                                     <tr>
@@ -209,7 +210,6 @@
                                             <strong>Total de cargados:</strong>
                                         </td>
                                     </tr>
-                                </tbody>
                             </table>
                             <br/>
                             <t t-if="o.obser_recep">
@@ -218,7 +218,8 @@
                                 <span t-field="o.obser_recep"/>
                             </t>
                             <br/>
-                            <table class="table">
+                            <div>
+                                <table class="table">
                                 <tr>
                                     <td style="border-top: 0px solid white;text-align:center;">_______________________________</td>
                                     
@@ -228,7 +229,8 @@
                                     <td style="border-top: 0px solid white; text-align:center;">Nombre y firma(Monopark)</td>
                                     <td style="border-top: 0px solid white; text-align:center;">Nombre, firma y placas</td> 
                                 </tr>    
-                            </table>
+                                </table>
+                            </div>
                             <p>
                                 <t t-if="o.backorder_ids and o.backorder_ids.filtered(lambda x: x.state not in ('done', 'cancel'))">
                                     No se pudieron enviar todos los artículos, los restantes se enviarán tan pronto como estén disponibles.
