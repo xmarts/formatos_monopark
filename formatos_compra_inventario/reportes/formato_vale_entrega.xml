@@ -89,6 +89,14 @@
                                             
                                         </td>
                                     </tr>
+                                    <tr>
+                                        <td colspan="5" style="text-align:right;font-size:11pt;padding:5px;">
+                                            <strong>Total de bultos: </strong>
+                                            <span t-esc="sum(line.quantity_done for line in o.move_ids_without_package)"/>
+                                            <br/>
+                                            <strong>Total de cargados:</strong>
+                                        </td>
+                                    </tr>
                                     <!--<t t-set="lines" t-value="o.move_lines.filtered(lambda x: x.product_uom_qty)"/>
                                     <tr t-foreach="lines" t-as="move">
                                         <td>
