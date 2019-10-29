@@ -54,7 +54,7 @@
                                         <th><strong>Imagen</strong></th>
                                         <th style="width:180px;"><strong>Producto</strong></th>
                                         <th><strong>Cantidad</strong></th>
-                                        <th style="width:350px;"><strong>Observaciones</strong></th>
+                                        <th style="width:300px;"><strong>Observaciones</strong></th>
                                         <th><strong>Bultos</strong></th>
                                         <th><strong>Cargado</strong></th>
                                     </tr>
@@ -86,9 +86,7 @@
                                         <td>
                                             <span f-field="move.bultos"/>
                                         </td>
-                                        <td>
-                                            Primer tabla
-                                        </td>
+                                        <td></td>
                                     </tr>
                                     <!--<t t-set="lines" t-value="o.move_lines.filtered(lambda x: x.product_uom_qty)"/>
                                     <tr t-foreach="lines" t-as="move">
