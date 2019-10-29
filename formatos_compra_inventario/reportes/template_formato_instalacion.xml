@@ -2,11 +2,25 @@
 	<template id="template_formato_instalacion">
 		<t t-call="web.html_container">
 			<t t-call="web.external_layout">
-				<t>
+				<t t-foreach="docs" t-as="o">
+					<h3 class="text-center">Instalación Monopark</h3>
+                    <div>
+                        <div style="width:40%;margin-left:60%;">
+                            <p>
+                            <span t-field="o.partner_id.name"/>
+                            <br/>
+                            <span t-field="o.partner_id.street"/>
+                            <br/>
+                            <span><span t-field="o.partner_id.zip"/> <span t-field="o.partner_id.city"/> <span f-field="o.partner_id.state_id"/></span>
+                            <br/>
+                            <span t-field="o.partner_id.country_id.name"/>
+                            <br/>
+                            <span t-field="o.partner_id.phone"/>
+                        </p>
+                        </div>
+                    </div>
 					<div class="page">
-						<div t-foreach="docs" t-as="o"> 
-							<br/>
-							<h3 class="text-center">Instalación Monopark</h3>
+						<div> 
 							<table>
 								<tr >
 									<div t-if="o.origin">
@@ -34,9 +48,8 @@
 										<th colspan="5">Equipo Instalado</th>
 									</tr>
 									<tr>
-										<th scope="col">No</th>
 										<th scope="col">Cantidad</th>
-										<th scope="col">Grupo</th>
+										<th scope="col">Categoría</th>
 										<th scope="col">Código</th>
 										<th scope="col">Descripción del producto</th>
 									</tr>
@@ -46,10 +59,9 @@
 									<t t-foreach="o.move_ids_without_package" t-as="line">
 										<t t-set="cont" t-value="cont + 1" />
 										<tr>
-											<th scope="row"><span><t t-esc="cont"/></span></th>
 											<td><span t-field="line.product_uom_qty"/></td>
-											<td></td>
-											<td></td>
+											<td><span t-field="line.product_id.categ_id"></td>
+											<td><span t-field="line.product_id.default_code"></td>
 											<td><span t-field="line.product_id"/></td>
 										</tr>
 									</t>
@@ -57,10 +69,13 @@
 							</table>
 							<br/>
 							<strong>Comentarios:</strong>
-							<p>____________________________________________________________________________________________________________________________________________________________________________________________</p>
-
+							<br/>
+							<hr style="width:100;height: 1px; background-color: #7F7F7F;"/>
+							<br/>
+							<hr style="width:100;height: 1px; background-color: #7F7F7F;"/>
+							<br/>
 							<p style="text-align : justify;">
-								A través de la presente hacemos de su conocimiento que estamos conformes en su totalidad con el suministro e instalación de los pedidos "3183"  que los colaboradores de la empresa MONOPARK realizaron en nuestras instalaciones o en el domicilio acordado 
+								A través de la presente hacemos de su conocimiento que estamos conformes en su totalidad con el suministro e instalación de los pedido <span t-field="o.origin"/>  que los colaboradores de la empresa MONOPARK realizaron en nuestras instalaciones o en el domicilio acordado 
 							</p>
 							<p style="text-align : justify;">
 								Así mismo, sustento que todas las cláusulas del contrato del servicio que compartimos, fueron respetadas y llevadas a cabalidad, por lo que reiteramos nuestra conformidad con los servicios que nos han prestado.
