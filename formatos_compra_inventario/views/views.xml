@@ -9,6 +9,7 @@
         <xpath expr="//field[@name='picking_type_id']" position="after">
           <field name="entrega"/>
           <field name="instaladores"/>
+          <field name="destino"/>
         </xpath>
         <xpath expr="//field[@name='origin']" position="after">
           <field name="obser_recep"/>

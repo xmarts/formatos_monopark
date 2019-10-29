@@ -36,6 +36,7 @@ class StockPicking(models.Model):
 
 	entrega = fields.Char(string="Entrega")
 	instaladores = fields.Char(string="Instaladores")
+	destino = fields.Char(string="Destino")
 	obser_recep = fields.Text(string="Observaciones")
 	obser_esp = fields.Text(string="Condiciones especiales")
 	fecha_actual = fields.Char(string="Fecha actual", compute="_compute_fecha_actual")

@@ -106,7 +106,11 @@
                                     </tr>
                                 </t>
                             </table>
-                            
+                            <t t-if="o.ref_banco">
+                                <br/>
+                                <strong>Referencia del banco</strong>
+                                <span t-field="o.ref_banco"/>
+                            </t>
                             <strong>RFC:</strong>
                             <span t-field="o.partner_id.vat"/>
                             <br/>
@@ -138,14 +142,6 @@
                             <br/>
                             <strong>En atención:</strong>
                             <span t-field="o.empleado.name"/>
-
-                            <!--CAMBIOS DEL 201019-->
-                            <t t-if="o.ref_banco">
-                                <br/>
-                                <strong>Referencia del banco</strong>
-                                <span t-field="o.ref_banco"/>
-                            </t>
-
                         </div>
                         <div class="col-6 bm-2">
                             <strong>Tiempo entrega:</strong>
