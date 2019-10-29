@@ -36,7 +36,7 @@
 										<span t-field="o.partner_id"/>
 									</div>
 									<div t-if="o.fecha_actual">
-										<strong>Fecha de impresión: </strong>
+										<strong>Fecha: </strong>
 										<span t-field="o.fecha_actual"/>
 									</div>
 								</tr>
@@ -67,10 +67,18 @@
 							</table>
 							<br/>
 							<strong>Comentarios:</strong>
-							<p>__________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________</p>
+							<p>______________________________________________________________________________________________________
+							_________________
+							
+							____________________________________________________________________________________________________________________________________________
+							
+							
+							</p>
+
+							<hr style="width:100;"/>
 
 							<p style="text-align : justify;">
-								A través de la presente hacemos de su conocimiento que estamos conformes en su totalidad con el suministro de los pedidos "N"  que los colaboradores de la empresa MONOPARK realizaron en nuestras instalaciones o en el domicilio acordado.
+								A través de la presente hacemos de su conocimiento que estamos conformes en su totalidad con el suministro de los pedido <span t-field="o.origin"/>  que los colaboradores de la empresa MONOPARK realizaron en nuestras instalaciones o en el domicilio acordado.
 							</p>
 							<p style="text-align : justify;">
 								Así mismo, sustento que todas las cláusulas del contrato del servicio que compartimos, fueron respetadas y llevadas a cabalidad, por lo que reiteramos nuestra conformidad con los servicios que nos han prestado.

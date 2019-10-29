@@ -243,6 +243,7 @@
                                 <span t-field="o.obser_recep"/>
                             </t>
                             <br/>
+                            <br/><br/>
                             <div>
                                 <table class="table">
                                 <tr>
