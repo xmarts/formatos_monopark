@@ -210,6 +210,7 @@
                                             <strong>Total de cargados:</strong>
                                         </td>
                                     </tr>
+                                </tbody>
                             </table>
                             <br/>
                             <t t-if="o.obser_recep">
@@ -231,6 +232,7 @@
                                 </tr>    
                                 </table>
                             </div>
+                            
                             <p>
                                 <t t-if="o.backorder_ids and o.backorder_ids.filtered(lambda x: x.state not in ('done', 'cancel'))">
                                     No se pudieron enviar todos los artículos, los restantes se enviarán tan pronto como estén disponibles.
