@@ -67,15 +67,10 @@
 							</table>
 							<br/>
 							<strong>Comentarios:</strong>
-							<p>______________________________________________________________________________________________________
-							_________________
-							
-							____________________________________________________________________________________________________________________________________________
-							
-							
-							</p>
 
-							<hr style="width:100;height: 1px; background-color: black;"/>
+							<hr style="width:100;height: 1px; background-color: #7F7F7F;"/>
+							<br/>
+							<hr style="width:100;height: 1px; background-color: #7F7F7F;"/>
 
 							<p style="text-align : justify;">
 								A través de la presente hacemos de su conocimiento que estamos conformes en su totalidad con el suministro de los pedido <span t-field="o.origin"/>  que los colaboradores de la empresa MONOPARK realizaron en nuestras instalaciones o en el domicilio acordado.
