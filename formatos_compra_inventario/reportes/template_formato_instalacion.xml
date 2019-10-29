@@ -60,8 +60,8 @@
 										<t t-set="cont" t-value="cont + 1" />
 										<tr>
 											<td><span t-field="line.product_uom_qty"/></td>
-											<td><span t-field="line.product_id.categ_id"></td>
-											<td><span t-field="line.product_id.default_code"></td>
+											<td><span t-field="line.product_id.categ_id"/></td>
+											<td><span t-field="line.product_id.default_code"/></td>
 											<td><span t-field="line.product_id"/></td>
 										</tr>
 									</t>
