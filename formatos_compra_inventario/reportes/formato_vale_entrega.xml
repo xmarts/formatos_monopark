@@ -60,7 +60,37 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <t t-set="lines" t-value="o.move_lines.filtered(lambda x: x.product_uom_qty)"/>
+                                    <t t-set="lines" t-value="o.move_ids_without_package.filtered(lambda x: x.product_uom_qty)"/>
+                                    <tr t-foreach="lines" t-as="move">
+                                        <td>
+                                            <t t-if="move.product_id.image_small">
+                                                <img t-attf-src="data:image/*;base64,{{move.product_id.image_small}}"/>
+                                            </t>
+                                        </td>
+                                        <td>
+                                            <span t-field="move.product_id"/>
+                                            <p t-if="o.picking_type_code == 'outgoing'">
+                                                <span t-field="move.product_id.sudo().description_pickingout"/>
+                                            </p>
+                                            <p t-if="o.picking_type_code == 'incoming'">
+                                                <span t-field="move.product_id.sudo().description_pickingin"/>
+                                            </p>
+                                        </td>
+                                        <td>
+                                            <span t-field="move.product_uom_qty"/>
+                                            <span t-field="move.product_uom"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="move.observacion_pro"/>
+                                        </td>
+                                        <td>
+                                            <span f-field="move.bultos"/>
+                                        </td>
+                                        <td>
+                                            Primer tabla
+                                        </td>
+                                    </tr>
+                                    <!--<t t-set="lines" t-value="o.move_lines.filtered(lambda x: x.product_uom_qty)"/>
                                     <tr t-foreach="lines" t-as="move">
                                         <td>
                                             <t t-if="move.product_id.image_small">
@@ -87,7 +117,7 @@
                                             
                                         </td>
                                         <td></td>
-                                    </tr>
+                                    </tr>-->
                                 </tbody>
                             </table>
                             <table class="table table-sm mt48" t-if="o.move_line_ids and o.state=='done'">
@@ -170,7 +200,7 @@
                                             <span t-field="move_line.bultos"/>
                                         </td>
                                         <td>
-                                            <span>Sin valor</span>
+                                            <span>Tabla 2</span>
                                         </td>
                                     </tr>
                                     <tr>
