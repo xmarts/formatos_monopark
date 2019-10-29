@@ -76,7 +76,7 @@
 							<hr style="width:100;height: 1px; background-color: #7F7F7F;"/>
 							<br/>
 							<p style="text-align : justify;">
-								A través de la presente hacemos de su conocimiento que estamos conformes en su totalidad con el suministro e instalación de los pedido <span t-field="o.origin"/>  que los colaboradores de la empresa MONOPARK realizaron en nuestras instalaciones o en el domicilio acordado 
+								A través de la presente hacemos de su conocimiento que estamos conformes en su totalidad con el suministro e instalación del pedido <span t-field="o.origin"/>  que los colaboradores de la empresa MONOPARK realizaron en nuestras instalaciones o en el domicilio acordado 
 							</p>
 							<p style="text-align : justify;">
 								Así mismo, sustento que todas las cláusulas del contrato del servicio que compartimos, fueron respetadas y llevadas a cabalidad, por lo que reiteramos nuestra conformidad con los servicios que nos han prestado.
