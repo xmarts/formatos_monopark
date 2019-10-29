@@ -23,7 +23,7 @@
                             <h2>
                                 <span t-field="o.name"/>
                             </h2>
-                            <div class="row mt32 mb32" style="border:1px solid;padding:10px;">
+                            <div class="row mt32 mb32">
                                 <div class="col-8">
                                     <table class="table table-sm">
                                         <thead>
@@ -52,12 +52,12 @@
                                     </table>
                                 </div>
                                 <div class="col-4">
-                                    <t>
+                                    <t t-if="o.carrier_id">
                                         <strong>Transportista:</strong>
                                         <span t-field="o.carrier_id"/>
                                         <br/>
                                     </t>
-                                    <t>
+                                    <t t-if="o.destino">
                                         <strong>Destino:</strong>
                                         <span t-field="o.destino"/>
                                         <br/>
