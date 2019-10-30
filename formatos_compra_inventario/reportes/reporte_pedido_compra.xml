@@ -176,7 +176,8 @@
 
                     <table class="table table-sm o_main_table">
                         <thead>
-                            <tr>  
+                            <tr>
+                                <th><strong>Imagen del producto</strong></th>
                                 <th class="text-right"><strong>Cantidad</strong></th>
                                 <th><strong>Descripción</strong></th>
                                 <th class="text-right"><strong>Precio Unitario</strong></th>
@@ -185,6 +186,11 @@
                         </thead>
                         <tbody>
                             <tr t-foreach="o.order_line" t-as="line">
+                                <td>
+                                    <t t-if="line.product_id.image_small">
+                                        <img t-attf-src="data:image/*;base64,{{line.product_id.image_small}}"/>
+                                    </t>
+                                </td>
                                 <td class="text-right">
                                     <span t-field="line.product_qty"/>
                                     <span t-field="line.product_uom.name" groups="uom.group_uom"/>
