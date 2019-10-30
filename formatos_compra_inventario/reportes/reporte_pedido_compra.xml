@@ -69,10 +69,10 @@
                             <!--<strong>N. Comercial:</strong>
                             <span t-field="o.partner_id.x_studio_nombre_comercial" class="m-0"/>
                             <br/>-->
-                            <strong>Razón social:</strong>
+                            <strong>Nombre comercial del proveedor:</strong>
                             <span t-field="o.partner_id.name"/>
                             <br/>
-                            <strong>Domicilio:</strong>
+                            <strong>Colonia:</strong>
                             <span t-field="o.partner_id.street"/>
                             <br/>
                             <!--<strong>Colonia:</strong>
@@ -131,30 +131,46 @@
 
                     <div class="row mt32 mb32" style="border:1px solid;padding:10px;">
                         <div class="col-6 bm-2">
-                            <strong>Cedis:</strong>
-                            <span t-field="o.picking_type_id.warehouse_id.name"/>
-                            <br/>
-                            <strong>Requisitor:</strong>
-                            <span t-field="o.empleado.department_id.name"/>
-                            <br/>
-                            <strong>Transporte:</strong>
-                            <span t-field="o.transporte"/>
-                            <br/>
-                            <strong>En atención:</strong>
-                            <span t-field="o.empleado.name"/>
+                            <t t-if="o.picking_type_id.warehouse_id.name">
+                                <strong>Cedis:</strong>
+                                <span t-field="o.picking_type_id.warehouse_id.name"/>
+                                <br/>
+                            </t>
+                            <t t-if="o.empleado.department_id.name">
+                                <strong>Requisitor:</strong>
+                                <span t-field="o.empleado.department_id.name"/>
+                                <br/>
+                            </t>
+                            <t t-if="o.transporte">
+                                <strong>Transporte:</strong>
+                                <span t-field="o.transporte"/>
+                                <br/>
+                            </t>
+                            <t t-if="o.empleado.name">
+                                <strong>En atención:</strong>
+                                <span t-field="o.empleado.name"/>
+                            </t>
                         </div>
                         <div class="col-6 bm-2">
-                            <strong>Tiempo entrega:</strong>
-                            <span t-field="o.date_planned"/>
-                            <br/>
-                            <strong>Condiciones de pago:</strong>
-                            <span t-field="o.payment_term_id.name"/>
-                            <br/>
-                            <strong>Elaboró:</strong>
-                            <span t-field="o.user_id.name"/>
-                            <br/>
-                            <strong>Número de pedido:</strong>
-                            <span t-field="o.num_pedido"/>
+                            <t t-if="o.date_planned">
+                                <strong>Tiempo entrega:</strong>
+                                <span t-field="o.date_planned"/>
+                                <br/>
+                            </t>
+                            <t t-if="o.payment_term_id.name">
+                                <strong>Condiciones de pago:</strong>
+                                <span t-field="o.payment_term_id.name"/>
+                                <br/>
+                            </t>
+                            <t t-if="o.user_id.name">
+                                <strong>Elaboró:</strong>
+                                <span t-field="o.user_id.name"/>
+                                <br/>
+                            </t>
+                            <t t-if="o.num_pedido">
+                                <strong>Número de pedido:</strong>
+                                <span t-field="o.num_pedido"/>
+                            </t>
                         </div>
                     </div>
 
@@ -260,13 +276,10 @@
                     <br/>
                     <table class="table">
                         <tr>
-                            <td style="border-top: 0px solid white;text-align:center;">_______________________________</td>
-                            
-                            <td style="border-top: 0px solid white;text-align:center;">_______________________________</td>
+                            <td style="border-top: 0px solid white;text-align:center;">___________________________________________</td>
                         </tr>
                         <tr>
-                            <td style="border-top: 0px solid white; text-align:center; ">Cliente</td>
-                            <td style="border-top: 0px solid white; text-align:center;">Consultor</td> 
+                            <td style="border-top: 0px solid white; text-align:center; ">Autorizado por</td>
                         </tr>    
                     </table>
                     <!--<div id="total" class="row justify-content-end">

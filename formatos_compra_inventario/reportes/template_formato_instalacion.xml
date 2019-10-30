@@ -39,6 +39,10 @@
 										<strong>Instaladores: </strong>
 										<span t-field="o.instaladores"/>
 									</div>
+									<div t-if="o.obser_esp">
+										<strong>Condiciones especiales: </strong>
+										<span t-field="o.obser_esp"/>
+									</div>
 								</tr>
 							</table>
 							<br/>
@@ -62,7 +66,7 @@
 											<td><span t-field="line.product_uom_qty"/></td>
 											<td><span t-field="line.product_id.categ_id"/></td>
 											<td><span t-field="line.product_id.default_code"/></td>
-											<td><span t-field="line.product_id"/></td>
+											<td><span t-field="line.product_id.name"/></td>
 										</tr>
 									</t>
 								</tbody>
