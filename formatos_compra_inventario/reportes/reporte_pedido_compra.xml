@@ -69,7 +69,10 @@
                             <!--<strong>N. Comercial:</strong>
                             <span t-field="o.partner_id.x_studio_nombre_comercial" class="m-0"/>
                             <br/>-->
-                            <strong>Nombre comercial del proveedor:</strong>
+                            <strong>Nombre del comercial:</strong>
+                            <span t-field="o.partner_id.x_studio_nombre_comercial"/>
+                            <br/>
+                            <strong>Razón social:</strong>
                             <span t-field="o.partner_id.name"/>
                             <br/>
                             <strong>Colonia:</strong>
