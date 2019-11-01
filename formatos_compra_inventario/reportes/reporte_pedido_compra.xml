@@ -89,7 +89,7 @@
                             <span t-field="o.partner_id.zip"/>
                             <br/>
                             <strong>Ciudad:</strong>
-                            <span t-field="o.partner_id.city_id.name"/>
+                            <span t-field="o.partner_id.city"/>
                             <br/>
                             <strong>Estado:</strong>
                             <span t-field="o.partner_id.state_id.name"/>
