@@ -69,18 +69,22 @@
                             <!--<strong>N. Comercial:</strong>
                             <span t-field="o.partner_id.x_studio_nombre_comercial" class="m-0"/>
                             <br/>-->
-                            <strong>Nombre del comercial:</strong>
-                            <span t-field="o.partner_id.x_studio_nombre_comercial"/>
-                            <br/>
+                            <t t-if="o.partner_id.x_studio_nombre_comercial">
+                                <strong>Nombre del comercial:</strong>
+                                <span t-field="o.partner_id.x_studio_nombre_comercial"/>
+                                <br/>
+                            </t>
                             <strong>Razón social:</strong>
                             <span t-field="o.partner_id.name"/>
                             <br/>
-                            <strong>Colonia:</strong>
+                            <strong>Domicilio:</strong>
                             <span t-field="o.partner_id.street"/>
                             <br/>
-                            <!--<strong>Colonia:</strong>
-                            <span t-field="o.partner_id.l10n_mx_edi_colony"/>
-                            <br/>-->
+                            <t t-if="o.partner_id.l10n_mx_edi_colony">
+                                <strong>Colonia:</strong>
+                                <span t-field="o.partner_id.l10n_mx_edi_colony"/>
+                                <br/>
+                            </t>
                             <strong>C.P.:</strong>
                             <span t-field="o.partner_id.zip"/>
                             <br/>
