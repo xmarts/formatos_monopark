@@ -157,7 +157,7 @@
                                     <tr>
                                         <th><strong>Imagen</strong></th>
                                         <th style="width:180px;"><strong>Producto</strong></th>
-                                        <th name="lot_serial" t-if="has_serial_number" >
+                                        <th name="lot_serial" t-if="has_serial_number" groups="stock.group_lot_on_delivery_slip">
                                             Lot/Serial Number
                                         </th>
                                         <th class="text-center"><strong>Cantidad</strong></th>
@@ -215,10 +215,10 @@
                                                 <span t-field="move_line.product_id.sudo().description_pickingin"/>
                                             </p>
                                         </td>
-                                        <td t-if="has_serial_number and move_line.lot_name" >
+                                        <td t-if="has_serial_number and move_line.lot_name" groups="stock.group_lot_on_delivery_slip">
                                             <span t-field="move_line.lot_name"/>
                                         </td>
-                                        <td t-elif="has_serial_number">
+                                        <td t-elif="has_serial_number" groups="stock.group_lot_on_delivery_slip">
                                             <span t-field="move_line.lot_id.name"/>
                                         </td>
                                         <td class="text-center">

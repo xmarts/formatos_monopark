@@ -40,7 +40,7 @@ class StockPicking(models.Model):
 	obser_recep = fields.Text(string="Observaciones")
 	obser_esp = fields.Text(string="Condiciones especiales")
 	fecha_actual = fields.Char(string="Fecha actual", compute="_compute_fecha_actual")
-	estado_reserva = fields.Selection([('Anticipo','Anticipo'),('Autorizado sin pago','Autorizado sin pago'),('Pago total sin documentos','Pago total sin documentos'),('Listo para entregar','Listo para entregar')],string="Estado de reserva")
+	estado_reserva = fields.Selection([('Anticipo','Anticipo'),('Autorizado_sin_pago','Autorizado sin pago'),('Pago_total_sin_documentos','Pago total sin documentos'),('Listo_para_entregar','Listo para entregar')],string="Estado de reserva")
 
 	@api.one
 	def _compute_fecha_actual(self):
