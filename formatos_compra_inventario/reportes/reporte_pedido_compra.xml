@@ -255,7 +255,7 @@
                             <table style="border: 1px solid;width:350px;">
                                 <tr style="border-bottom:1px solid;">
                                     <th style="background-color:#EAEAEA;height:22px;padding:10px;width:200px;">No. De factura</th>
-                                    <td><span t-field="o.prueba"/></td>
+                                    <td><span t-field="o.partner_ref"/></td>
                                 </tr>
                                 <tr>
                                     <th style="background-color:#EAEAEA;height:22px;padding:10px;width:200px;">Fecha limite de pago</th>
