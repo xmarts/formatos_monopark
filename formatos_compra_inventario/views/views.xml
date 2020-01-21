@@ -21,7 +21,7 @@
           <attribute name="attrs">{'invisible':[('estado_reserva','=',False)]}</attribute>
         </xpath>
         <xpath expr="//button[@name='button_validate']" position="attributes">
-         <attribute name="attrs">{'invisible':[('estado_reserva','=',False)]}</attribute>
+         <attribute name="attrs">{'invisible':[('estado_reserva','!=','Listo_para_entregar')]}</attribute>
         </xpath>
         <xpath expr="//notebook/page/field[@name='move_ids_without_package']/tree/field[@name='product_id']" position="after">
           <field name="observacion_pro" string="Observaciones"/>
@@ -49,5 +49,8 @@
         </xpath>
       </field>
     </record>
+
+
+
   </data>
 </odoo>
