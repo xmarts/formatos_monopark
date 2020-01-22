@@ -156,6 +156,11 @@
                             <t t-if="o.empleado.name">
                                 <strong>En atención:</strong>
                                 <span t-field="o.empleado.name"/>
+                                <br/>
+                            </t>
+                            <t  t-if="o.solicito.department_id.name">
+                                <strong>Departamento:</strong>
+                                <span t-field="o.solicito.department_id.name"/>
                             </t>
                         </div>
                         <div class="col-6 bm-2">
