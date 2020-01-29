@@ -59,4 +59,11 @@ class StockMove(models.Model):
 
 	observacion_pro = fields.Text()
 	bultos = fields.Integer()
-		
+
+class hr_inherit(models.Model):
+	_inherit="hr.employee"
+
+	number_em = fields.Integer(string="Número de empleado")
+	date_in=fields.Date(string="Fecha de ingreso")
+	date_out=fields.Date(string="Fecha de baja")
+	kind_blood=fields.Char(string="Tipo de sangre")

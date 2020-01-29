@@ -50,6 +50,27 @@
       </field>
     </record>
 
+    <!-- AGREGAR CAMPOS A LA VISTA DE EMPLEADOS/Informacion Privada -->
+    <record id="add_fields_employee" model="ir.ui.view">
+      <field name="">Add field in Employee</field>
+      <field name="model">hr.employee</field>
+      <field name="inherit_id" ref="hr.view_employee_form"/>
+      <field name="arch" type="xml">
+        
+        <xpath expr="//field[@name='children']" position="after">
+          <field name="number_em"/>
+        </xpath>
+         <xpath expr="//field[@name='visa_expire']" position="after">
+          <field name="date_in"/>
+          <field name="date_out"/>
+        </xpath>
+        <xpath expr="//field[@name='km_home_work']" position="after">
+          <field name="kind_blood"/>
+        </xpath>
+
+      </field>
+    </record>
+
 
 
   </data>
