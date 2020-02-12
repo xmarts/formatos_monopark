@@ -13,7 +13,7 @@
         </xpath>
         <xpath expr="//field[@name='origin']" position="after">
           <field name="obser_recep"/>
-          <field name="estado_reserva"/>
+          <field name="estado_reserva" attrs="{'invisible':[('picking_type_id','!=','internal')]}"/>
           <field name="obser_esp"/>
           <field name="fecha_actual" invisible="1"/>
         </xpath>
