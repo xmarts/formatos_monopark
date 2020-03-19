@@ -54,6 +54,10 @@ class StockPicking(models.Model):
 			self.estado_reserva='listo_para_recibir'
 		else:
 			self.estado_reserva=""
+		if self.picking_type_code=='internal':
+			self.estado_reserva="Listo_para_entregar"
+		else:
+			self.estado_reserva=""
 
 class StockMove(models.Model):
 	_inherit = "stock.move"
