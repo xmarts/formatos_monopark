@@ -49,16 +49,13 @@ class StockPicking(models.Model):
 		self.fecha_actual = fecha
 
 	@api.onchange('picking_type_code')
-	def onchange_picking_type(self):
+	def onchange_picking_type_code(self):
 		if self.picking_type_code == 'incoming':
 			self.estado_reserva='listo_para_recibir'
-		else:
-			self.estado_reserva=""
-		if self.picking_type_code=='internal':
+		elif self.picking_type_code =='internal':
 			self.estado_reserva="Listo_para_entregar"
 		else:
 			self.estado_reserva=""
-
 class StockMove(models.Model):
 	_inherit = "stock.move"
 
