@@ -117,11 +117,21 @@
                                         <td><span t-field="line.clabe_campo"/></td>
                                     </tr>
                                 </t> -->
-                                <tr>
-                                    <td><span t-field="o.partner_id.bank_ids.bank_id"/></td>
-                                    <td><span t-field="o.partner_id.bank_ids.acc_number"/></td>
-                                    <td><span t-field="o.partner_id.bank_ids.clabe_campo"/></td>
-                                </tr>
+                                
+                              <t t-if="o.partner_id.bank_ids.bank_id">
+                                    <tr>
+                                        <td><span t-field="o.partner_id.bank_ids.bank_id"/></td>
+                                        <td><span t-field="o.partner_id.bank_ids.acc_number"/></td>
+                                        <td><span t-field="o.partner_id.bank_ids.clabe_campo"/></td>
+                                    </tr>
+                                </t>
+                                <t t-else="">
+                                    <tr>
+                                        <td><span t-field="o.partner_id.parent_id.bank_ids.bank_id"/></td>
+                                        <td><span t-field="o.partner_id.parent_id.bank_ids.acc_number"/></td>
+                                        <td><span t-field="o.partner_id.parent_id.bank_ids.clabe_campo"/></td>
+                                    </tr>
+                                </t>
                             </table>
                             <t t-if="o.ref_banco">
                                 <br/>
