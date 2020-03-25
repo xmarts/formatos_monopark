@@ -75,7 +75,12 @@
                                 <br/>
                             </t> -->
                             <strong>Razón social:</strong>
-                            <span t-field="o.partner_id.name"/>
+                           <t t-if="o.partner_id.parent_id">
+                                <span t-field="o.partner_id.parent_id"/>
+                           </t>
+                           <t t-else="">
+                               <span t-field="o.partner_id.name"/>
+                           </t>
                             <br/>
                             <strong>Domicilio:</strong>
                             <span t-field="o.partner_id.street"/>
@@ -105,13 +110,18 @@
                                    <th>No. Cuenta</th>
                                    <th>Clabe</th>
                                 </tr>
-                                <t t-foreach="o.partner_id.bank_ids" t-as="line">
+                                <!-- <t t-foreach="o.partner_id.bank_ids" t-as="line">
                                     <tr>
                                         <td><span t-field="line.bank_id"/></td>
                                         <td><span t-field="line.acc_number"/></td>
                                         <td><span t-field="line.clabe_campo"/></td>
                                     </tr>
-                                </t>
+                                </t> -->
+                                <tr>
+                                    <td><span t-field="o.partner_id.bank_ids.bank_id"/></td>
+                                    <td><span t-field="o.partner_id.bank_ids.acc_number"/></td>
+                                    <td><span t-field="o.partner_id.bank_ids.clabe_campo"/></td>
+                                </tr>
                             </table>
                             <t t-if="o.ref_banco">
                                 <br/>
@@ -208,7 +218,7 @@
                                     <span t-field="line.product_uom.name" groups="uom.group_uom"/>
                                 </td>
                                 <td>
-                                    <span t-field="line.product_id.description_sale"/>
+                                    <span t-field="line.product_id.name"/>
                                 </td>
                                 <td class="text-right">
                                     <span t-field="line.price_unit"/>
@@ -217,6 +227,7 @@
                                     <span t-field="line.price_subtotal" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: o.currency_id}"/>
                                 </td>
                             </tr>
+
                         </tbody>
                     </table>
 
