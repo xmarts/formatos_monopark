@@ -62,6 +62,16 @@ class StockMove(models.Model):
 	observacion_pro = fields.Text()
 	bultos = fields.Integer()
 
+class FunctionReserv(models.Model):
+	_inherit = 'procurement.group'
+
+	@api.model
+	def _get_moves_to_assign_domain(self):
+		return expression.AND([
+			[('state', 'in', ['confirmed', 'partially_available']),('estado_reserva','=','Listo_para_entregar')],
+			[('product_uom_qty', '!=', 0.0)]
+		])
+
 class hr_inherit(models.Model):
 	_inherit="hr.employee"
 
