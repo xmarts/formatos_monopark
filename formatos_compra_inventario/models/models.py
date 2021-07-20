@@ -10,7 +10,9 @@ class PurchaseOrder(models.Model):
 	transporte = fields.Char(string="Transporte")
 	enatencion = fields.Char(string="En atención")
 
-	tipo_de = fields.Selection([('tipo1', 'Insumos'),('tipo2', 'Herramientas de trabajo'),('tipo3','Materiales'),('tipo4','Servicios'),('tipo5','Subministros'),('tipo6','Refacciones'),('tipo7','Compra')], string="Tipo de")
+	tipo_de = fields.Selection([('tipo1', 'Insumos'),('tipo2', 'Herramientas de trabajo'),('tipo3','Materiales'),('tipo4','Servicios'),
+		('tipo5','Subministros'),('tipo6','Refacciones'),('tipo7','Compra'),('tipo','Producto a fabricación')], string="Tipo de")
+
 	empleado = fields.Many2one('hr.employee', string="Atención a.")
 
 	#CAMBIOS DEL 201019
