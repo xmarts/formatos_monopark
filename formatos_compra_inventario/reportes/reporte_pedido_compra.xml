@@ -270,7 +270,7 @@
                         </tr>    
                     <p t-field="o.notes"/>
                     <div class="oe_structure"/>
-                    
+                    </table>
                 </div>
             </t>        
         </xpath>
