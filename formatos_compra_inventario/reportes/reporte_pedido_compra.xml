@@ -189,12 +189,14 @@
                         </div>
                     </div>
 
-                    <table class="table table-sm o_main_table">
+                                        <table class="table table-sm o_main_table">
                         <thead>
                             <tr>
                                 <th><strong>Imagen del producto</strong></th>
+                                <th><strong>Codigo de producto</strong></th>
                                 <th class="text-right"><strong>Cantidad</strong></th>
                                 <th><strong>Descripción</strong></th>
+                                <th><strong>Nota</strong></th>
                                 <th class="text-right"><strong>Precio Unitario</strong></th>
                                 <th class="text-right"><strong>Total</strong></th>
                             </tr>
@@ -206,6 +208,9 @@
                                         <img t-attf-src="data:image/*;base64,{{line.product_id.image_small}}"/>
                                     </t>
                                 </td>
+                                <td>
+                                    <span t-field="line.product_id.default_code"/>
+                                </td>
                                 <td class="text-right">
                                     <span t-field="line.product_qty"/>
                                     <span t-field="line.product_uom.name" groups="uom.group_uom"/>
@@ -213,6 +218,9 @@
                                 <td>
                                     <span t-field="line.product_id.name"/>
                                 </td>
+                                <td>
+                                    <span t-field="line.x_studio_observaciones"/>
+                                </td>                                
                                 <td class="text-right">
                                     <span t-field="line.price_unit"/>
                                 </td>
@@ -220,7 +228,6 @@
                                     <span t-field="line.price_subtotal" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: o.currency_id}"/>
                                 </td>
                             </tr>
-
                         </tbody>
                     </table>
 
