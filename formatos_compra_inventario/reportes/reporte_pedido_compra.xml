@@ -267,7 +267,7 @@
                             </table>
                         </div>
                     </div>
-                    <br/>
+<!--                     <br/>
                     <table class="table">
                         <tr>
                             <td style="border-top: 0px solid white;text-align:center;">___________________________________________</td>
@@ -277,7 +277,7 @@
                         </tr>    
                     <p t-field="o.notes"/>
                     <div class="oe_structure"/>
-                    </table>
+                    </table> -->
                 </div>
             </t>        
         </xpath>
