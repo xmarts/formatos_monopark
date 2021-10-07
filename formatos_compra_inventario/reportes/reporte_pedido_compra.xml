@@ -1,5 +1,5 @@
 <odoo>
-    <template id="reporte_pedido_compra" inherit_id="purchase.report_purchaseorder_document">
+    <template id="reporte_pedido_compra_" inherit_id="purchase.report_purchaseorder_document">
         <xpath expr="//t[@t-call='web.external_layout']" position="replace">
             <t t-call="web.basic_layout">
                 <div class="header">
@@ -57,7 +57,6 @@
                         <h2 t-if="o.state in ['purchase', 'done']">Confirmación de orden de compra #<span t-field="o.name"/></h2>
                         <h2 t-if="o.state == 'cancel'">Orden de compa cancelada #<span t-field="o.name"/></h2>
                     </div>
-
                     <h4 class="text-center" style="background-color:#EAEAEA;padding:5px;">Datos del proveedor</h4>
                     <div id="informations" class="row mt32 mb32" style="border:1px solid;padding:10px;">
                         <div class="col-6 bm-2">
@@ -134,7 +133,6 @@
                             <span t-field="o.partner_id.email"/>
                         </div>
                     </div>
-
                     <div class="row mt32 mb32" style="border:1px solid;padding:10px;">
                         <div class="col-6 bm-2">
                             <t t-if="o.picking_type_id.warehouse_id.name">
@@ -188,8 +186,7 @@
                             </t>
                         </div>
                     </div>
-
-                                        <table class="table table-sm o_main_table">
+                    <table class="table table-sm o_main_table">
                         <thead>
                             <tr>
                                 <th><strong>Imagen del producto</strong></th>
@@ -230,7 +227,6 @@
                             </tr>
                         </tbody>
                     </table>
-
                     <div id="informations" class="row mt32 mb32">
                         <div class="col-6 bm-2">
                             <table style="border: 1px solid;width:350px;">
