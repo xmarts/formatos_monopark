@@ -135,10 +135,11 @@
                     </div>
                     <div class="row mt32 mb32" style="border:1px solid;padding:10px;">
                         <div class="col-6 bm-2">
-                            <t t-if="o.picking_type_id.warehouse_id.name">
+                            <t t-if="o.dest_address_id">
                                 <strong>Cedis:</strong>
-                                <span t-field="o.picking_type_id.warehouse_id.name"/>
-                                <br/>
+                                <div t-if="o.dest_address_id">
+                                    <div t-field="o.dest_address_id" t-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;address&quot;, &quot;name&quot;, &quot;phone&quot;], &quot;no_marker&quot;: True, &quot;phone_icons&quot;: True}" name="purchase_shipping_address"/>
+                                </div>
                             </t>
                             <t t-if="o.empleado.department_id.name">
                                 <strong>Requisitor:</strong>
