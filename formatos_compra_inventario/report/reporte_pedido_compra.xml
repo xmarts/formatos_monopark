@@ -135,10 +135,22 @@
                     </div>
                     <div class="row mt32 mb32" style="border:1px solid;padding:10px;">
                         <div class="col-6 bm-2">
-                            <t t-if="o.dest_address_id">
+                            <div style="display:none;">
+                                <t t-if="o.dest_address_id">
+                                    <strong>Cedis:</strong>
+                                </t>
+                            </div>
+                            <t t-if="o.dest_address_id.id">
                                 <strong>Cedis:</strong>
-                                <div t-if="o.dest_address_id">
+                                <div t-if="o.dest_address_id.id">
                                     <div t-field="o.dest_address_id" t-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;address&quot;, &quot;name&quot;, &quot;phone&quot;], &quot;no_marker&quot;: True, &quot;phone_icons&quot;: True}" name="purchase_shipping_address"/>
+                                </div>
+                            </t>
+                            <t t-else="">
+                                <strong>Cedis:</strong>
+                                <div t-if="o.picking_type_id and o.picking_type_id.warehouse_id">
+                                    <span t-field="o.picking_type_id.warehouse_id.name"/>
+                                    <div t-field="o.picking_type_id.warehouse_id.partner_id" t-options='{"widget": "contact", "fields": ["address", "phone"], "no_marker": True, "phone_icons": True}'/>
                                 </div>
                             </t>
                             <t t-if="o.empleado.department_id.name">
@@ -267,5 +279,5 @@
                 </div>
             </t>        
         </xpath>
-    </template>        
+    </template>      
 </odoo>
