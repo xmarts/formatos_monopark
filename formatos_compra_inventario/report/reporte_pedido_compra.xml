@@ -1,5 +1,5 @@
 <odoo>
-    <template id="reporte_pedido_compra_" inherit_id="purchase.report_purchaseorder_document">
+    <template id="reporte_pedido_compra_" inherit_id="purchase.report_purchaseorder_document" priority="1">
         <xpath expr="//t[@t-call='web.external_layout']" position="replace">
             <t t-call="web.basic_layout">
                 <div class="header">
