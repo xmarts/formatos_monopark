@@ -153,6 +153,11 @@
                                     <div t-field="o.picking_type_id.warehouse_id.partner_id" t-options='{"widget": "contact", "fields": ["address", "phone"], "no_marker": True, "phone_icons": True}'/>
                                 </div>
                             </t>
+                            <t t-if="o.requisition_id">
+                                <strong>Acuerdo de compra:</strong>
+                                <span t-field="o.requisition_id.name"/>
+                                <br/>
+                            </t>   
                             <t t-if="o.empleado.department_id.name">
                                 <strong>Requisitor:</strong>
                                 <span t-field="o.empleado.department_id.name"/>
