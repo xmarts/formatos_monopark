@@ -85,9 +85,6 @@
                             <strong>Estado:</strong>
                             <span t-field="o.partner_id.state_id.name"/>
                             <br/>
-                            <strong>Tipo de:</strong>
-                            <span t-field="o.tipo_de"/>
-                            <br/>
                         </div>
                         <div class="col-6 bm-2">
                             <table style="margin-left:10px;" class="table table-striped">
@@ -157,7 +154,12 @@
                                 <strong>Acuerdo de compra:</strong>
                                 <span t-field="o.requisition_id.name"/>
                                 <br/>
-                            </t>   
+                            </t>
+                            <t t-if="o.empleado.department_id.name">
+                                <strong>Tipo de:</strong>
+                                <span t-field="o.tipo_de"/>
+                                <br/>
+                            </t>
                             <t t-if="o.empleado.department_id.name">
                                 <strong>Requisitor:</strong>
                                 <span t-field="o.empleado.department_id.name"/>
