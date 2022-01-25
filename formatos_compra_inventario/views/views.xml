@@ -36,16 +36,16 @@
       <field name="model">purchase.order</field>
       <field name="inherit_id" ref="purchase.purchase_order_form"/>
       <field name="arch" type="xml">
-        <xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='purchase_delivery_invoice']/group[1]/group[1]/div[1]" position="after">
+        <!-- <xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='purchase_delivery_invoice']/group[1]/group[1]/field[@name='']" position="after">
           <field name="transporte"/>     
-        </xpath>
+        </xpath> -->
         <xpath expr="//field[@name='currency_id']" position="after">
           <field name="tipo_de"/>
           <field name="empleado"/>
           <field name="solicito"/>
           <field name="num_pedido"/>
         </xpath>
-        <xpath expr="//field[@name='date_order']" position="after">
+        <xpath expr="//field[@name='date_planned']" position="after">
           <field name="fecha_limite_pago"/>
         </xpath>
       </field>
@@ -53,11 +53,10 @@
 
     <!-- AGREGAR CAMPOS A LA VISTA DE EMPLEADOS/Informacion Privada -->
     <record id="add_fields_employee" model="ir.ui.view">
-      <field name="">Add field in Employee</field>
+      <field name="name">Add field in Employee</field>
       <field name="model">hr.employee</field>
       <field name="inherit_id" ref="hr.view_employee_form"/>
       <field name="arch" type="xml">
-        
         <xpath expr="//field[@name='children']" position="after">
           <field name="number_em"/>
         </xpath>
@@ -68,7 +67,6 @@
         <xpath expr="//field[@name='km_home_work']" position="after">
           <field name="kind_blood"/>
         </xpath>
-
       </field>
     </record>
 

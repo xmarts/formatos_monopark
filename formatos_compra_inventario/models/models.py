@@ -10,8 +10,16 @@ class PurchaseOrder(models.Model):
 	transporte = fields.Char(string="Transporte")
 	enatencion = fields.Char(string="En atención")
 
-	tipo_de = fields.Selection([('tipo1', 'Insumos'),('tipo2', 'Herramientas de trabajo'),('tipo3','Materiales'),('tipo4','Servicios'),
-		('tipo5','Subministros'),('tipo6','Refacciones'),('tipo7','Compra'),('tipo','Producto a fabricación')], string="Tipo de")
+	tipo_de = fields.Selection([
+		('tipo1', 'Insumos'),
+		('tipo2', 'Herramientas de trabajo'),
+		('tipo3','Materiales'),
+		('tipo4','Servicios'),
+		('tipo5','Subministros'),
+		('tipo6','Refacciones'),
+		('tipo7','Compra'),
+		('tipo','Producto a fabricación')],
+		string="Tipo de")
 
 	empleado = fields.Many2one('hr.employee', string="Atención a.")
 
@@ -42,10 +50,23 @@ class StockPicking(models.Model):
 	obser_recep = fields.Text(string="Observaciones")
 	obser_esp = fields.Text(string="Condiciones especiales")
 	fecha_actual = fields.Char(string="Fecha actual", compute="_compute_fecha_actual")
-	estado_reserva = fields.Selection([('Anticipo','Anticipo'),('Autorizado_sin_pago','Autorizado sin pago'),('Pago_total_sin_documentos','Pago total sin documentos'),('Listo_para_entregar','Listo para entregar'),('listo_para_recibir','Listo para recibir')],string="Estado de reserva")
-	estado_reserva_ro = fields.Selection([('Anticipo','Anticipo'),('Autorizado_sin_pago','Autorizado sin pago'),('Pago_total_sin_documentos','Pago total sin documentos'),('Listo_para_entregar','Listo para entregar'),('listo_para_recibir','Listo para recibir')],string="Estado de reserva", related='estado_reserva', readonly=True)
+	estado_reserva = fields.Selection([
+		('Anticipo','Anticipo'),
+		('Autorizado_sin_pago','Autorizado sin pago'),
+		('Pago_total_sin_documentos','Pago total sin documentos'),
+		('Listo_para_entregar','Listo para entregar'),
+		('listo_para_recibir','Listo para recibir')],
+		string="Estado de reserva")
+	estado_reserva_ro = fields.Selection([
+		('Anticipo','Anticipo'),
+		('Autorizado_sin_pago','Autorizado sin pago'),
+		('Pago_total_sin_documentos','Pago total sin documentos'),
+		('Listo_para_entregar','Listo para entregar'),
+		('listo_para_recibir','Listo para recibir')],
+		string="Estado de reserva", 
+		related='estado_reserva', 
+		readonly=True)
 
-	@api.one
 	def _compute_fecha_actual(self):
 		fecha = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
 		self.fecha_actual = fecha
