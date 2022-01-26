@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "formatos_compra_inventario_15",
+    'name': "formatos_compra_inventario",
 
     'summary': """
         Short (1 phrase/line) summary of the module's purpose, used as

@@ -30,15 +30,13 @@
         </xpath>
       </field>
     </record>
-    <!--AGREGAR TRES CAMPOS A LA VISTA DE VENTAS EN EL MOD DE VENTAS-->
+
+    <!--AGREGAR TRES CAMPOS A LA VISTA DE VENTAS-->
     <record id="add_fields_purchase" model="ir.ui.view"> 
       <field name="name">Add field</field>
       <field name="model">purchase.order</field>
       <field name="inherit_id" ref="purchase.purchase_order_form"/>
       <field name="arch" type="xml">
-        <!-- <xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='purchase_delivery_invoice']/group[1]/group[1]/field[@name='']" position="after">
-          <field name="transporte"/>     
-        </xpath> -->
         <xpath expr="//field[@name='currency_id']" position="after">
           <field name="tipo_de"/>
           <field name="empleado"/>
