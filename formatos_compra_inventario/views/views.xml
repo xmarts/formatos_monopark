@@ -10,7 +10,6 @@
           <field name="entrega"/>
           <field name="instaladores"/>
           <field name="destino"/>
-          <field name="is_devolucion"/>
         </xpath>
         <xpath expr="//field[@name='origin']" position="after">
           <field name="obser_recep"/>
