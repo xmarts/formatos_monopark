@@ -203,8 +203,8 @@
                             <span t-field="o.obser_recep"/>
                         </t>
                         <br/><br/><br/>
-                        <div class="table">
-                            <table>
+                        <div>
+                            <table class="table">
                             <tr>
                                 <td style="border-top: 0px solid white;text-align:center;">_______________________________</td>
                                 
