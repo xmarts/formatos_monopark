@@ -66,6 +66,43 @@ class StockPicking(models.Model):
 		string="Estado de reserva", 
 		related='estado_reserva', 
 		readonly=True)
+	availability_full = fields.Boolean(string="Disponible", default=False)
+	done_full = fields.Boolean(string="Validado", default=False)
+
+	def action_assign(self):
+		contador = 0
+		res = super(StockPicking, self).action_assign()
+		if res:
+			for record in self:
+				if record.move_ids_without_package:
+					for line in record.move_ids_without_package:
+						if record.picking_type_code == 'internal':
+							if line.reserved_availability == 0:
+								contador += 1
+						if record.picking_type_code == 'outgoing':
+							if line.forecast_availability == 0:
+								contador += 1
+					if contador == 0:
+						record.availability_full = True
+					else:
+						record.availability_full = False
+			return res
+
+	def button_validate(self):
+		contador = 0
+		res = super(StockPicking, self).button_validate()
+		for record in self:
+			if record.move_ids_without_package:
+				for line in record.move_ids_without_package:
+					if line.quantity_done > 0:
+						contador += 1
+				if contador > 0:
+					self.done_full = True
+				else:
+					self.done_full = False
+		return res
+					
+
 
 	def _compute_fecha_actual(self):
 		fecha = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')

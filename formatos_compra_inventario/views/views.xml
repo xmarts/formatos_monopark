@@ -10,6 +10,8 @@
           <field name="entrega"/>
           <field name="instaladores"/>
           <field name="destino"/>
+          <field name="availability_full" invisible="1"/>
+          <field name="done_full" invisible="1"/>
         </xpath>
         <xpath expr="//field[@name='origin']" position="after">
           <field name="obser_recep"/>
@@ -19,10 +21,26 @@
           <field name="fecha_actual" invisible="1"/>
         </xpath>
         <xpath expr="//button[@name='action_assign']" position="attributes">
-          <attribute name="attrs">{'invisible':[('estado_reserva','=',False)]}</attribute>
+          <attribute name="attrs">
+            {
+              'invisible':[
+                '|',
+                '|',
+                ('estado_reserva','=',False),
+                ('picking_type_code','=','incoming'),
+                ('availability_full','=',True)]
+            }
+          </attribute>
         </xpath>
         <xpath expr="//button[@name='button_validate']" position="attributes">
-         <attribute name="attrs">{'invisible':[('estado_reserva','not in',('Listo_para_entregar','listo_para_recibir')) ]}</attribute>
+          <attribute name="attrs">
+            {
+              'invisible':[
+                '|',
+                ('estado_reserva','not in',('Listo_para_entregar','listo_para_recibir')),
+                ('done_full','=',True)]
+            }
+          </attribute>
         </xpath>
         <xpath expr="//notebook/page/field[@name='move_ids_without_package']/tree/field[@name='product_id']" position="after">
           <field name="observacion_pro" string="Observaciones"/>
@@ -67,6 +85,5 @@
         </xpath>
       </field>
     </record>
-
   </data>
 </odoo>
