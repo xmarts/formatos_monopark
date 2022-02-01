@@ -28,13 +28,12 @@
         # 'security/ir.model.access.csv',
         'views/views.xml',
         'views/templates.xml',
+        'report/delivery_ticket_report.xml'
         #'report/reporte_pedido_compra.xml',
         #'report/layout_formato_instalacion.xml',
         #'report/template_formato_instalacion.xml',
         #'report/layout_formato_entrega_cliente.xml',
         #'report/template_formato_entrega_cliente.xml',
-        #'report/formato_vale_entrega.xml',
-        #'report/layout_vale_entrega.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
