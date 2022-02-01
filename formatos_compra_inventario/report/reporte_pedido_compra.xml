@@ -221,8 +221,8 @@
                         <tbody>
                             <tr t-foreach="o.order_line" t-as="line">
                                 <td>
-                                    <t t-if="line.product_id.image_small">
-                                        <img t-attf-src="data:image/*;base64,{{line.product_id.image_small}}"/>
+                                    <t t-if="line.product_id.image_128">
+                                        <img t-attf-src="data:image/*;base64,{{line.product_id.image_128}}"/>
                                     </t>
                                 </td>
                                 <td>

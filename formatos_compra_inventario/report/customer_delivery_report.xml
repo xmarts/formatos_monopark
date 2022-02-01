@@ -1,9 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
 <odoo>
-	<template id="template_formato_instalacion">
+	<template id="template_customer_delivery_report">
 		<t t-call="web.html_container">
 			<t t-call="web.external_layout">
 				<t t-foreach="docs" t-as="o">
-					<h3 class="text-center">Instalación Monopark</h3>
+					<h3 style="text-align:center;">Entrega de cliente</h3>
                     <div>
                         <div style="width:40%;margin-left:60%;">
                             <p>
@@ -35,13 +36,9 @@
 										<strong>Cliente: </strong>
 										<span t-field="o.partner_id"/>
 									</div>
-									<div t-if="o.instaladores">
-										<strong>Instaladores: </strong>
-										<span t-field="o.instaladores"/>
-									</div>
-									<div t-if="o.obser_esp">
-										<strong>Condiciones especiales: </strong>
-										<span t-field="o.obser_esp"/>
+									<div t-if="o.fecha_actual">
+										<strong>Fecha: </strong>
+										<span t-field="o.fecha_actual"/>
 									</div>
 								</tr>
 							</table>
@@ -49,7 +46,7 @@
 							<table class="table">
 								<thead>
 									<tr>
-										<th colspan="5">Equipo Instalado</th>
+										<th colspan="5">Equipo Entregado</th>
 									</tr>
 									<tr>
 										<th scope="col">Cantidad</th>
@@ -59,9 +56,7 @@
 									</tr>
 								</thead>
 								<tbody>
-									<t t-set="cont" t-value="0" />
 									<t t-foreach="o.move_ids_without_package" t-as="line">
-										<t t-set="cont" t-value="cont + 1" />
 										<tr>
 											<td><span t-field="line.product_uom_qty"/></td>
 											<td><span t-field="line.product_id.categ_id"/></td>
@@ -81,7 +76,7 @@
 								<hr style="width:100;height: 1px; background-color: #7F7F7F;"/>
 								<br/>
 								<p style="text-align : justify;">
-									A través de la presente hacemos de su conocimiento que estamos conformes en su totalidad con el suministro e instalación del pedido <span t-field="o.origin"/>  que los colaboradores de la empresa MONOPARK realizaron en nuestras instalaciones o en el domicilio acordado 
+									A través de la presente hacemos de su conocimiento que estamos conformes en su totalidad con el suministro del pedido <span t-field="o.origin"/>  que los colaboradores de la empresa MONOPARK realizaron en nuestras instalaciones o en el domicilio acordado.
 								</p>
 								<p style="text-align : justify;">
 									Así mismo, sustento que todas las cláusulas del contrato del servicio que compartimos, fueron respetadas y llevadas a cabalidad, por lo que reiteramos nuestra conformidad con los servicios que nos han prestado.
@@ -101,6 +96,7 @@
 									</tr>
 								</table>
 							</div>
+							
 						</div>
 					</div>
 				</t>
@@ -108,4 +104,13 @@
 		</t>
 	</template>
 
+	<record id="action_customer_delivery_report" model="ir.actions.report">
+        <field name="name">Formato entrega cliente</field>
+        <field name="model">stock.picking</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">formatos_compra_inventario.template_customer_delivery_report</field>
+        <field name="report_file">formatos_compra_inventario.template_customer_delivery_report</field>
+        <field name="binding_model_id" ref="model_stock_picking"/>
+        <field name="binding_type">report</field>
+    </record>
 </odoo>
